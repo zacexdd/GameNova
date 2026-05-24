@@ -42,6 +42,36 @@
             }
         }
 
+        @media (min-width: 768px) {
+            .cards-container {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 24px;
+                padding: 30px 40px 60px;
+                overflow-x: hidden;
+                box-sizing: border-box;
+            }
+
+            .nav-card {
+                width: 420px;
+                max-width: 420px;
+                min-width: 300px;
+                margin: 0 !important;
+                flex: 0 0 420px;
+                box-sizing: border-box;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 900px) {
+            .nav-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
         .hero {
             text-align: center;
             padding: 40px 20px 20px;
@@ -263,7 +293,8 @@
                     </div>
                 </div>
             </div>
-            <a href="https://play.google.com/store/apps/details?id=com.xiaoji.egggame&pcampaignid=web_share" target="_blank" class="card-btn games-btn">Download
+            <a href="https://play.google.com/store/apps/details?id=com.xiaoji.egggame&pcampaignid=web_share"
+                target="_blank" class="card-btn games-btn">Download
                 Now →</a>
         </div>
 
