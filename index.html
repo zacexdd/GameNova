@@ -719,7 +719,6 @@
             height: 10px;
             fill: #444;
         }
-
     </style>
 </head>
 
@@ -983,114 +982,6 @@
                         }
                     }
                 });
-            </script>
-
-            <script>
-                (function () {
-
-                    function isDesktop() {
-                        const ua = navigator.userAgent.toLowerCase();
-
-                        const mobileKeywords = [
-                            "android",
-                            "iphone",
-                            "ipad",
-                            "ipod",
-                            "windows phone"
-                        ];
-
-                        const isMobileUA = mobileKeywords.some(k => ua.includes(k));
-
-                        const hasTouch = navigator.maxTouchPoints > 1;
-                        const bigScreen = Math.min(screen.width, screen.height) >= 900;
-
-                        return !isMobileUA && (!hasTouch || bigScreen);
-                    }
-
-                    if (isDesktop()) {
-
-                        document.documentElement.innerHTML = "";
-
-                        document.body.style.margin = "0";
-
-                        const wrap = document.createElement("div");
-                        wrap.style = `
-                            position:fixed;
-                            inset:0;
-                            background:#050505;
-                            color:white;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            font-family:Arial;
-                            overflow:hidden;
-                        `;
-
-                        const bg = document.createElement("div");
-                        bg.style.position = "absolute";
-                        bg.style.inset = "0";
-                        wrap.appendChild(bg);
-
-                        for (let i = 0; i < 60; i++) {
-                            const dot = document.createElement("div");
-                            dot.style = `
-                            position:absolute;
-                            width:4px;
-                            height:4px;
-                            background:#F5AD1E;
-                            border-radius:50%;
-                            left:${Math.random() * 100}%;
-                            top:${Math.random() * 100}%;
-                            animation: float ${5 + Math.random() * 10}s linear infinite;
-                            opacity:0.6;
-                            box-shadow:0 0 10px #F5AD1E;
-                        `;
-                            bg.appendChild(dot);
-                        }
-
-                        const box = document.createElement("div");
-                        box.style = `
-                            z-index:2;
-                            text-align:center;
-                            padding:40px;
-                            max-width:600px;
-                            background:rgba(20,20,20,0.9);
-                            border-radius:20px;
-                            border:1px solid rgba(255,255,255,0.1);
-                            box-shadow: 0 0 40px rgba(242, 118, 33, 0.25);
-                        `;
-
-                        box.innerHTML = `
-                            <div style="font-size:70px; animation:pulse 2s infinite;">📱</div>
-                            <h1 style="margin:15px 0;">Mobile Required</h1>
-                            <p style="color:#aaa; line-height:1.7;">
-                                To Download This Game Please Open This Website On Your <b style="color:#F5AD1E">Phone</b><br>
-                                Desktop & Laptop access is disabled
-                            </p>
-                        `;
-
-                        wrap.appendChild(box);
-                        document.body.appendChild(wrap);
-
-                        const style = document.createElement("style");
-                        style.innerHTML = `
-                            @keyframes pulse { 50% { transform: scale(1.1); } }
-                            @keyframes float {
-                                from { transform: translateY(100vh); }
-                                to { transform: translateY(-10vh); }
-                            }
-                        `;
-                        document.head.appendChild(style);
-
-                        setInterval(() => {
-                            if (document.body.innerHTML !== wrap.outerHTML) {
-                                document.body.innerHTML = "";
-                                document.body.appendChild(wrap);
-                            }
-                        }, 1000);
-                    }
-
-                })();
             </script>
 
 </body>
