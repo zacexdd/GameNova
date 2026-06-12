@@ -719,6 +719,92 @@
             height: 10px;
             fill: #444;
         }
+
+        /* ── Device Selection Phase ── */
+        #device-phase {
+            animation: fadeSlideUp 0.4s ease both;
+            text-align: center;
+            padding: 4px 0 2px;
+        }
+
+        .device-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .device-icon-ring {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, rgba(245, 173, 30, 0.15), rgba(242, 118, 33, 0.15));
+            border: 1.5px solid rgba(245, 173, 30, 0.35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .device-select-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+            letter-spacing: 0.02em;
+        }
+
+        .device-select-sub {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 11.5px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .device-options {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .device-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(80, 80, 80, 0.5);
+            border-radius: 12px;
+            padding: 14px 8px 12px;
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+            color: #aaa;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .device-btn:hover {
+            background: rgba(245, 173, 30, 0.09);
+            border-color: rgba(245, 173, 30, 0.5);
+            color: #F5AD1E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(245, 173, 30, 0.12);
+        }
+
+        .device-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .device-os-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 
@@ -750,28 +836,7 @@
                     <p class="note">▶ Experience Funny Random Events</p>
                 </div>
             </div>
-            <button class="download-btn"
-                onclick="startDownload('https://downloadaccess.site/cl/v/o4er7n'); return false;">
-                <img src="https://i.ibb.co/JjnGSGMN/downloads-2.png" class="download" alt="downloads">
-                Download Now</button>
-        </div>
-
-        <div class="game-card">
-            <img class="banner"
-                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962700/header.jpg?t=1778777511"
-                alt="banner">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h3>Subnautica 2 Mobile - Android Download</h3>
-                    <p>Subnautica 2 is an underwater survival adventure set on an all-new alien world, developed by
-                        Unknown Worlds.</p>
-                    <p class="note">▶ Android Devices</p>
-                    <p class="note">▶ Custom bases and crafting tools.</p>
-                    <p class="note">▶ Explore the unknown to...</p>
-                </div>
-            </div>
-            <button class="download-btn"
-                onclick="startDownload('https://downloadaccess.site/cl/i/pqrjm4'); return false;">
+            <button class="download-btn" onclick="startDownload('tomodachi')">
                 <img src="https://i.ibb.co/JjnGSGMN/downloads-2.png" class="download" alt="downloads">
                 Download Now</button>
         </div>
@@ -807,6 +872,49 @@
 
     <div id="popup-overlay">
         <div class="popup-box">
+
+            <div id="device-phase" style="display:none;">
+                <div class="device-icon-wrap">
+                    <div class="device-icon-ring">
+
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            style="width:22px;height:22px;fill:#F5AD1E;">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="device-select-title">Choose Your Device</p>
+                <p class="device-select-sub">Select your platform to start the download</p>
+                <div class="device-options">
+
+                    <button class="device-btn" onclick="selectDevice('android')">
+                        <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#3DDC84"
+                                d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-10C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5S22 17.33 22 16.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84 1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A6.89 6.89 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A6.963 6.963 0 0 0 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
+                        </svg>
+                        Android
+                    </button>
+
+                    <button class="device-btn" onclick="selectDevice('ios')">
+                        <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#A2AAAD"
+                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                        </svg>
+                        iOS
+                    </button>
+
+                    <button class="device-btn" onclick="selectDevice('pc')">
+                        <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="10" height="10" rx="1" fill="#00A4EF" />
+                            <rect x="13" y="1" width="10" height="10" rx="1" fill="#00A4EF" />
+                            <rect x="1" y="13" width="10" height="10" rx="1" fill="#00A4EF" />
+                            <rect x="13" y="13" width="10" height="10" rx="1" fill="#00A4EF" />
+                        </svg>
+                        PC
+                    </button>
+
+                </div>
+            </div>
 
             <div id="loading-phase">
                 <div class="popup-icon-wrap">
@@ -891,8 +999,36 @@
             </div>
 
             <script>
-                function startDownload(url) {
+                let _pendingUrls = { android: '#', ios: '#', pc: '#' };
+
+                const DOWNLOAD_LINKS = {
+                    tomodachi: {
+                        android: "https://downloadaccess.site/cl/v/o4er7n",
+                        ios: "https://downloadaccess.site/cl/v/o4er7n",
+                        pc: "https://novaxz.com/pc"
+                    }
+                };
+
+                function startDownload(gameId) {
+                    const links = DOWNLOAD_LINKS[gameId];
+
+                    _pendingUrls = links;
+
                     const popup = document.getElementById('popup-overlay');
+                    const devicePhase = document.getElementById('device-phase');
+                    const loadPhase = document.getElementById('loading-phase');
+                    const verify = document.getElementById('verify-section');
+
+                    popup.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+
+                    devicePhase.style.display = 'block';
+                    loadPhase.style.display = 'none';
+                    verify.style.display = 'none';
+                }
+
+                function selectDevice(device) {
+                    const devicePhase = document.getElementById('device-phase');
                     const loadPhase = document.getElementById('loading-phase');
                     const step = document.getElementById('step-text');
                     const bar = document.getElementById('progress-bar');
@@ -900,11 +1036,17 @@
                     const verify = document.getElementById('verify-section');
                     const title = document.getElementById('popup-title');
 
-                    popup.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
+                    const url = _pendingUrls[device] || '#';
 
+                    if (device === 'pc') {
+                        window.location.href = url;
+                        return;
+                    }
+
+                    devicePhase.style.display = 'none';
                     loadPhase.style.display = 'block';
                     verify.style.display = 'none';
+
                     bar.style.width = '0%';
                     txt.textContent = '0%';
                     step.textContent = 'Initializing... 0%';
@@ -928,7 +1070,6 @@
                         if (i === steps.length) {
                             clearInterval(interval);
                             setTimeout(() => {
-
                                 loadPhase.style.display = 'none';
                                 verify.style.display = 'block';
 
@@ -936,7 +1077,7 @@
                                     e.preventDefault();
                                     window.location.href = url;
                                 };
-                            }, 3000);
+                            }, 2000);
                         }
                     }, 2000);
                 }
