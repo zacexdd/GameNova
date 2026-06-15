@@ -5,23 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novaxz</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@400;500;700&display=swap"
-        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Exo 2', sans-serif;
+            font-family: 'Lexend', sans-serif;
         }
 
         body {
             background: #0a0a0a;
             color: #eee;
             text-align: center;
-            font-family: 'Exo 2', sans-serif;
+            font-family: 'Lexend', sans-serif;
         }
 
         @media (min-width: 768px) {
@@ -79,11 +78,11 @@
             align-items: center;
             text-align: center;
             padding: 15px 20px;
+            margin-bottom: 20px;
             background: #000;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(80, 80, 80, 0.7);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -99,18 +98,18 @@
         .logo span {
             font-weight: bold;
             font-size: 20px;
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Lexend', sans-serif;
         }
 
         #searchBar {
-            font-family: 'Exo 2', sans-serif;
+            font-family: 'Lexend', sans-serif;
             padding: 10px 100px;
             padding-left: 40px;
             border-radius: 6px;
             margin-top: 15px;
             border: 1px solid rgba(80, 80, 80, 0.7);
             outline: none;
-            font-size: 14px;
+            font-size: 12px;
             background: #141414cc;
             color: #fff;
             backdrop-filter: blur(5px);
@@ -122,10 +121,10 @@
         }
 
         .breadcrumb {
-            font-size: 0.9rem;
+            font-size: 0.80rem;
             color: #aaa;
             margin: 15px 20px;
-            text-align: left;
+            text-align: left
         }
 
         .breadcrumb a {
@@ -147,11 +146,6 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .game-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(130, 130, 130, 0.15);
-        }
-
         .banner {
             width: 100%;
             height: auto;
@@ -171,7 +165,7 @@
         }
 
         .game-info p {
-            font-size: 16px;
+            font-size: 14px;
             color: #D1D5DB;
             margin-top: 10px;
             text-align: left;
@@ -179,7 +173,7 @@
         }
 
         .game-info h3 {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Lexend', sans-serif;
             font-size: 19.2px;
             text-align: left;
             margin-left: -10px;
@@ -187,7 +181,7 @@
 
         .note {
             margin-bottom: -5px;
-            font-size: 14px !important;
+            font-size: 13px !important;
         }
 
         footer {
@@ -198,43 +192,66 @@
             margin-top: 40px;
         }
 
-        .download-btn {
-            font-family: 'Orbitron', sans-serif;
-            display: inline-block;
-            background: linear-gradient(135deg, #F5AD1E, #F27621);
-            border: none;
-            box-shadow: 0 4px 15px rgba(40, 40, 40, 0.5);
-            color: #ffffff;
+        .os-buttons-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 0 18px;
+            align-items: center;
+        }
+
+        .os-btn {
+            font-family: 'Lexend', sans-serif;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            padding: 12px 40px;
-            margin-bottom: 15px;
-            margin-top: 15px;
-            font-size: 14px;
+            gap: 9px;
+            margin-top: 10px;
+            padding: 13px 28px;
+            font-size: 13px;
             font-weight: bold;
-            border-radius: 6px;
-            text-decoration: none;
-            white-space: nowrap;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            width: 90%;
+            max-width: 320px;
+            letter-spacing: 0.04em;
+            transition: transform 0.18s ease, box-shadow 0.2s ease;
             -webkit-tap-highlight-color: transparent;
-            animation: btnPulse 2s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
         }
 
-        .download-btn:active {
-            transform: translateY(-3px);
+        .os-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+            animation: shimmer 2.8s ease infinite;
         }
 
-        @keyframes pulse {
+        .os-btn:active {
+            transform: translateY(1px);
+        }
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+        .os-btn svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
 
-            50% {
-                transform: scale(1.08);
-            }
+        .os-btn.android {
+            background: linear-gradient(135deg, #2ecc71, #1aab57);
+            box-shadow: 0 4px 18px rgba(46, 204, 113, 0.45);
+        }
+
+        .os-btn.ios {
+            background: linear-gradient(135deg, #0a84ff, #0066cc);
+            box-shadow: 0 4px 18px rgba(10, 132, 255, 0.35);
         }
 
         .download {
@@ -303,49 +320,6 @@
             }
         }
 
-        @keyframes dotBlink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.15;
-            }
-        }
-
-        @keyframes shieldDrop {
-            0% {
-                transform: scale(0.5) translateY(-20px);
-                opacity: 0;
-            }
-
-            70% {
-                transform: scale(1.1) translateY(3px);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes btnPulse {
-
-            0%,
-            100% {
-                box-shadow: 0 4px 22px rgba(242, 118, 33, 0.5);
-                transform: scale(1);
-            }
-
-            50% {
-                box-shadow: 0 6px 36px rgba(242, 118, 33, 0.8);
-                transform: scale(1.035);
-            }
-        }
-
         @keyframes shimmer {
             0% {
                 left: -100%;
@@ -354,18 +328,6 @@
             60%,
             100% {
                 left: 160%;
-            }
-        }
-
-        @keyframes borderPulse {
-
-            0%,
-            100% {
-                border-color: rgba(242, 118, 33, 0.25);
-            }
-
-            50% {
-                border-color: rgba(242, 118, 33, 0.65);
             }
         }
 
@@ -503,307 +465,81 @@
             display: block;
         }
 
-        #verify-section {
-            animation: fadeSlideUp 0.4s ease both;
+        .faq-section {
+            margin: 40px 20px;
+            text-align: left;
         }
 
-        .verify-card {
-            border: 1px solid rgba(242, 118, 33, 0.3);
+        .faq-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(255, 255, 255, 0.10);
             border-radius: 12px;
-            padding: 20px 16px 18px;
-            background: linear-gradient(160deg, rgba(245, 173, 30, 0.07) 0%, rgba(242, 118, 33, 0.04) 100%);
-            animation: borderPulse 2.5s ease-in-out infinite;
-            position: relative;
+            margin-bottom: 12px;
             overflow: hidden;
+            background: #111;
         }
 
-        .verify-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #F5AD1E, #F27621, transparent);
-        }
-
-        .verify-shield-wrap {
-            margin-bottom: 14px;
-        }
-
-        .verify-shield {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #F5AD1E, #F27621);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            animation: shieldDrop 0.5s cubic-bezier(.36, 1.4, .5, 1) both;
-            box-shadow: 0 0 0 8px rgba(245, 173, 30, 0.1), 0 0 24px rgba(242, 118, 33, 0.4);
-        }
-
-        .verify-shield svg {
-            width: 26px;
-            height: 26px;
-            fill: #fff;
-        }
-
-        .verify-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(255, 55, 55, 0.1);
-            border: 1px solid rgba(255, 80, 80, 0.3);
-            border-radius: 99px;
-            padding: 4px 11px;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            color: #ff6b6b;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin: 0 auto 12px;
-        }
-
-        .verify-badge .dot {
-            width: 5px;
-            height: 5px;
-            background: #ff4c4c;
-            border-radius: 50%;
-            animation: dotBlink 1s ease infinite;
-            flex-shrink: 0;
-        }
-
-        .verify-headline {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-            line-height: 1.35;
-        }
-
-        .verify-sub {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 12.5px;
-            color: #888;
-            line-height: 1.6;
-            margin-bottom: 18px;
-        }
-
-        .verify-sub strong {
-            color: #F5AD1E;
-            font-weight: 600;
-        }
-
-        .verify-steps {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            margin-bottom: 18px;
-        }
-
-        .vstep {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 9.5px;
-            color: #555;
-            min-width: 48px;
-        }
-
-        .vstep-dot {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            border: 1.5px solid #2a2a2a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #444;
-        }
-
-        .vstep.done .vstep-dot {
-            background: linear-gradient(135deg, #F5AD1E, #F27621);
-            border-color: transparent;
-            color: #fff;
-            font-size: 12px;
-        }
-
-        .vstep.active .vstep-dot {
-            border-color: #F5AD1E;
-            color: #F5AD1E;
-            box-shadow: 0 0 10px rgba(245, 173, 30, 0.4);
-        }
-
-        .vstep.done {
-            color: #aaa;
-        }
-
-        .vstep.active {
-            color: #F5AD1E;
-        }
-
-        .vstep-line {
-            width: 20px;
-            height: 1.5px;
-            background: #222;
-            margin-bottom: 20px;
-            flex-shrink: 0;
-        }
-
-        .vstep-line.done {
-            background: linear-gradient(90deg, #F5AD1E, #F27621);
-        }
-
-        #verify-btn {
-            font-family: 'Orbitron', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
+        .faq-question {
             width: 100%;
-            padding: 14px 20px;
-            background: linear-gradient(135deg, #F5AD1E 0%, #F27621 100%);
-            color: #fff;
-            font-size: 12.5px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: #151515;
             border: none;
-            text-decoration: none;
             cursor: pointer;
-            animation: btnPulse 2s ease-in-out infinite;
-            -webkit-tap-highlight-color: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #verify-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 55%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 2.5s ease infinite;
-        }
-
-        #verify-btn svg {
-            width: 15px;
-            height: 15px;
-            fill: #fff;
-            flex-shrink: 0;
-        }
-
-        .verify-trust {
-            margin-top: 11px;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 10px;
-            color: #444;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .verify-trust svg {
-            width: 10px;
-            height: 10px;
-            fill: #444;
-        }
-
-        /* ── Device Selection Phase ── */
-        #device-phase {
-            animation: fadeSlideUp 0.4s ease both;
-            text-align: center;
-            padding: 4px 0 2px;
-        }
-
-        .device-icon-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 14px;
-        }
-
-        .device-icon-ring {
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(135deg, rgba(245, 173, 30, 0.15), rgba(242, 118, 33, 0.15));
-            border: 1.5px solid rgba(245, 173, 30, 0.35);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .device-select-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 13.5px;
-            font-weight: 700;
             color: #fff;
-            margin-bottom: 5px;
-            letter-spacing: 0.02em;
+            font-size: 14px;
         }
 
-        .device-select-sub {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 11.5px;
-            color: #666;
-            margin-bottom: 20px;
+        .faq-question:hover {
+            background: #1b1b1b;
         }
 
-        .device-options {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .device-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(80, 80, 80, 0.5);
-            border-radius: 12px;
-            padding: 14px 8px 12px;
-            cursor: pointer;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 7px;
-            transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+        .chevron {
+            width: 18px;
+            height: 18px;
             color: #aaa;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 10.5px;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            -webkit-tap-highlight-color: transparent;
+            transition: transform 0.25s ease;
         }
 
-        .device-btn:hover {
-            background: rgba(245, 173, 30, 0.09);
-            border-color: rgba(245, 173, 30, 0.5);
-            color: #F5AD1E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(245, 173, 30, 0.12);
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+            background: #0f0f0f;
         }
 
-        .device-btn:active {
-            transform: translateY(-1px);
+        .faq-answer p {
+            margin: 0;
+            padding: 14px 16px;
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.5;
         }
 
-        .device-os-icon {
-            width: 28px;
-            height: 28px;
-            flex-shrink: 0;
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+            margin-left: -10px;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: #ddd;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 6px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+            backdrop-filter: blur(6px);
         }
     </style>
 </head>
@@ -831,16 +567,77 @@
                     <p>Tomodachi Life Living The Dream lets you create unique characters and watch their lives unfold on
                         your
                         island.</p>
-                    <p class="note">▶ iOS (iPhone & iPad) & Android</p>
-                    <p class="note">▶ Create & Customize Your Characters</p>
-                    <p class="note">▶ Experience Funny Random Events</p>
+                    <div class="tags">
+                        <span class="tag">iOS & Android</span>
+                        <span class="tag">Free</span>
+                        <span class="tag">Safe</span>
+                        <span class="tag">Offline Play</span>
+                    </div>
                 </div>
             </div>
-            <button class="download-btn" onclick="startDownload('tomodachi')">
-                <img src="https://i.ibb.co/JjnGSGMN/downloads-2.png" class="download" alt="downloads">
-                Download Now</button>
+
+            <div class="os-buttons-wrap">
+                <button class="os-btn android" onclick="startDownload('tomodachi','android')">
+
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff"
+                            d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-10C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5S22 17.33 22 16.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84 1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A6.89 6.89 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A6.963 6.963 0 0 0 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
+                    </svg>
+                    Download for Android
+                </button>
+
+                <button class="os-btn ios" onclick="startDownload('tomodachi','ios')">
+
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff"
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                    </svg>
+                    Download for iOS
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2 class="faq-title">FAQ</h2>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Is this game safe to download?</span>
+                <svg class="chevron" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, Every file is verified before being published to make sure it is safe, clean, and free from
+                    viruses.</p>
+            </div>
         </div>
 
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Is it free?</span>
+                <svg class="chevron" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, the game is completely free.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Does it work on iOS and Android?</span>
+                <svg class="chevron" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, it works on both Android and iOS devices using verified emulators.</p>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -873,52 +670,9 @@
     <div id="popup-overlay">
         <div class="popup-box">
 
-            <div id="device-phase" style="display:none;">
-                <div class="device-icon-wrap">
-                    <div class="device-icon-ring">
-
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                            style="width:22px;height:22px;fill:#F5AD1E;">
-                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z" />
-                        </svg>
-                    </div>
-                </div>
-                <p class="device-select-title">Choose Your Device</p>
-                <p class="device-select-sub">Select your platform to start the download</p>
-                <div class="device-options">
-
-                    <button class="device-btn" onclick="selectDevice('android')">
-                        <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#3DDC84"
-                                d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-10C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5S22 17.33 22 16.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84 1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A6.89 6.89 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A6.963 6.963 0 0 0 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
-                        </svg>
-                        Android
-                    </button>
-
-                    <button class="device-btn" onclick="selectDevice('ios')">
-                        <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#A2AAAD"
-                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                        </svg>
-                        iOS
-                    </button>
-
-                    <button class="device-btn" onclick="selectDevice('pc')">
-                        <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="1" y="1" width="10" height="10" rx="1" fill="#00A4EF" />
-                            <rect x="13" y="1" width="10" height="10" rx="1" fill="#00A4EF" />
-                            <rect x="1" y="13" width="10" height="10" rx="1" fill="#00A4EF" />
-                            <rect x="13" y="13" width="10" height="10" rx="1" fill="#00A4EF" />
-                        </svg>
-                        PC
-                    </button>
-
-                </div>
-            </div>
-
             <div id="loading-phase">
                 <div class="popup-icon-wrap">
-                    <div class="popup-spinner">
+                    <div class="popup-spinner" id="popup-spinner">
                         <div class="popup-spinner-inner">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -935,195 +689,132 @@
                 <span id="progress-text">0%</span>
             </div>
 
-            <div id="verify-section" style="display:none;">
-                <div class="verify-card">
+        </div>
+    </div>
 
-                    <div class="verify-shield-wrap">
-                        <div class="verify-shield">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5L12 1zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z" />
-                            </svg>
-                        </div>
-                    </div>
+    <script>
+        const DOWNLOAD_LINKS = {
+            tomodachi: {
+                android: "https://downloadaccess.site/cl/v/o4er7n",
+                ios: "https://downloadaccess.site/cl/v/o4er7n",
+            }
+        };
 
-                    <div class="verify-badge">
-                        <span class="dot"></span> Action Required
-                    </div>
+        function startDownload(gameId, device) {
+            const links = DOWNLOAD_LINKS[gameId];
+            const url = links[device] || '#';
 
-                    <p class="verify-headline">Human Verification Needed</p>
+            const popup = document.getElementById('popup-overlay');
+            const loadPhase = document.getElementById('loading-phase');
+            const step = document.getElementById('step-text');
+            const bar = document.getElementById('progress-bar');
+            const txt = document.getElementById('progress-text');
+            const title = document.getElementById('popup-title');
+            const spinner = document.getElementById('popup-spinner');
+            const spinnerInner = spinner.querySelector('.popup-spinner-inner');
 
-                    <p class="verify-sub">
-                        Your download is <strong>95% complete</strong>. One quick
-                        verification unlocks your game instantly.
-                    </p>
+            bar.className = 'progress-bar ' + device + '-bar';
+            txt.className = device + '-txt';
 
-                    <div class="verify-steps">
-                        <div class="vstep done">
-                            <div class="vstep-dot">✓</div>
-                            <span>Connect</span>
-                        </div>
-                        <div class="vstep-line done"></div>
-                        <div class="vstep done">
-                            <div class="vstep-dot">✓</div>
-                            <span>Download</span>
-                        </div>
-                        <div class="vstep-line done"></div>
-                        <div class="vstep active">
-                            <div class="vstep-dot">!</div>
-                            <span>Verify</span>
-                        </div>
-                        <div class="vstep-line"></div>
-                        <div class="vstep">
-                            <div class="vstep-dot">▶</div>
-                            <span>Play</span>
-                        </div>
-                    </div>
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            loadPhase.style.display = 'block';
 
-                    <button id="verify-btn">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
-                        </svg>
-                        UNLOCK GAME
-                    </button>
+            bar.style.width = '0%';
+            txt.textContent = '0%';
+            step.textContent = 'Initializing... 0%';
+            title.textContent = 'Preparing your game...';
 
-                    <div class="verify-trust">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5L12 1z" />
-                        </svg>
-                        Free &amp; secure · Takes less than 30 seconds
-                    </div>
+            const steps = [22, 53, 78, 95];
+            const msgs = [
+                'Connecting to servers...',
+                'Downloading assets...',
+                'Installing game files...',
+                'Finalizing...'
+            ];
+            let i = 0;
 
-                </div>
-            </div>
+            const interval = setInterval(() => {
+                bar.style.width = steps[i] + '%';
+                txt.textContent = steps[i] + '%';
+                step.textContent = msgs[i] + ' ' + steps[i] + '%';
+                i++;
 
-            <script>
-                let _pendingUrls = { android: '#', ios: '#', pc: '#' };
-
-                const DOWNLOAD_LINKS = {
-                    tomodachi: {
-                        android: "https://downloadaccess.site/cl/v/o4er7n",
-                        ios: "https://downloadaccess.site/cl/v/o4er7n",
-                        pc: "https://novaxz.com/pc"
-                    }
-                };
-
-                function startDownload(gameId) {
-                    const links = DOWNLOAD_LINKS[gameId];
-
-                    _pendingUrls = links;
-
-                    const popup = document.getElementById('popup-overlay');
-                    const devicePhase = document.getElementById('device-phase');
-                    const loadPhase = document.getElementById('loading-phase');
-                    const verify = document.getElementById('verify-section');
-
-                    popup.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-
-                    devicePhase.style.display = 'block';
-                    loadPhase.style.display = 'none';
-                    verify.style.display = 'none';
-                }
-
-                function selectDevice(device) {
-                    const devicePhase = document.getElementById('device-phase');
-                    const loadPhase = document.getElementById('loading-phase');
-                    const step = document.getElementById('step-text');
-                    const bar = document.getElementById('progress-bar');
-                    const txt = document.getElementById('progress-text');
-                    const verify = document.getElementById('verify-section');
-                    const title = document.getElementById('popup-title');
-
-                    const url = _pendingUrls[device] || '#';
-
-                    if (device === 'pc') {
+                if (i === steps.length) {
+                    clearInterval(interval);
+                    setTimeout(() => {
                         window.location.href = url;
-                        return;
-                    }
-
-                    devicePhase.style.display = 'none';
-                    loadPhase.style.display = 'block';
-                    verify.style.display = 'none';
-
-                    bar.style.width = '0%';
-                    txt.textContent = '0%';
-                    step.textContent = 'Initializing... 0%';
-                    title.textContent = 'Preparing your game...';
-
-                    const steps = [22, 53, 78, 95];
-                    const msgs = [
-                        'Connecting to servers...',
-                        'Downloading assets...',
-                        'Installing game files...',
-                        'Finalizing...'
-                    ];
-                    let i = 0;
-
-                    const interval = setInterval(() => {
-                        bar.style.width = steps[i] + '%';
-                        txt.textContent = steps[i] + '%';
-                        step.textContent = msgs[i] + ' ' + steps[i] + '%';
-                        i++;
-
-                        if (i === steps.length) {
-                            clearInterval(interval);
-                            setTimeout(() => {
-                                loadPhase.style.display = 'none';
-                                verify.style.display = 'block';
-
-                                document.getElementById('verify-btn').onclick = e => {
-                                    e.preventDefault();
-                                    window.location.href = url;
-                                };
-                            }, 2000);
-                        }
                     }, 2000);
                 }
-            </script>
+            }, 2000);
+        }
+    </script>
 
-            <script>
-                (function () {
-                    const ua = navigator.userAgent.toLowerCase();
-                    const ref = document.referrer.toLowerCase();
-                    const fb = document.getElementById('tiktok-fallback');
-                    if (!fb) return;
+    <script>
+        (function () {
+            const ua = navigator.userAgent.toLowerCase();
+            const ref = document.referrer.toLowerCase();
+            const fb = document.getElementById('tiktok-fallback');
+            if (!fb) return;
 
-                    const tikTokIdentifiers = [
-                        "tiktok",
-                        "musical_ly",
-                        "com.ss.android.ugc.trill",
-                        "musicallygo"
-                    ];
+            const tikTokIdentifiers = [
+                "tiktok",
+                "musical_ly",
+                "com.ss.android.ugc.trill",
+                "musicallygo"
+            ];
 
-                    const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
+            const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
 
-                    if (isTikTokBrowser) {
-                        fb.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        fb.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                })();
-            </script>
+            if (isTikTokBrowser) {
+                fb.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                fb.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        })();
+    </script>
 
-            <script>
-                const searchBar = document.getElementById("searchBar");
+    <script>
+        const searchBar = document.getElementById("searchBar");
 
-                searchBar.addEventListener("input", function () {
-                    const query = searchBar.value.toLowerCase();
-                    const headings = document.querySelectorAll("h3");
+        searchBar.addEventListener("input", function () {
+            const query = searchBar.value.toLowerCase();
+            const headings = document.querySelectorAll("h3");
 
-                    for (let h of headings) {
-                        if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
-                            h.scrollIntoView({ behavior: "smooth", block: "center" });
-                            break;
-                        }
-                    }
+            for (let h of headings) {
+                if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
+                    h.scrollIntoView({ behavior: "smooth", block: "center" });
+                    break;
+                }
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll(".faq-question").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector(".faq-answer");
+                const icon = item.querySelector(".chevron");
+
+                const isOpen = answer.style.maxHeight;
+
+                document.querySelectorAll(".faq-answer").forEach(a => {
+                    a.style.maxHeight = null;
                 });
-            </script>
+                document.querySelectorAll(".chevron").forEach(c => {
+                    c.style.transform = "rotate(0deg)";
+                });
+
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.style.transform = "rotate(180deg)";
+                }
+            });
+        });
+    </script>
 
 </body>
 
