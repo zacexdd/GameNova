@@ -4,7 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novaxz</title>
+    
+    <title>Meccha Chameleon Mobile - Download Free on Android & iOS</title>
+    <meta name="description"
+        content="Download Meccha Chameleon on mobile! Play the popular Steam game on Android and iOS for free. No console required — get the latest version now on Novaxz.">
+    <meta name="keywords"
+        content="meccha chameleon mobile, meccha chameleon android, meccha chameleon ios, meccha chameleon download, play meccha chameleon on phone, meccha chameleon free mobile, meccha chameleon steam mobile">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://novaxz.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://novaxz.com/">
+    <meta property="og:title" content="Meccha Chameleon Mobile - Download Free on Android & iOS">
+    <meta property="og:description"
+        content="Play Meccha Chameleon on mobile! Download the popular Steam game on Android and iOS for free on Novaxz.">
+    <meta property="og:image" content="https://i.ibb.co/fdG5q7Rx/mecha.jpg">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Meccha Chameleon Mobile",
+        "operatingSystem": "Android, iOS",
+        "applicationCategory": "GameApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Play Meccha Chameleon on mobile. Download the popular Steam game on Android and iOS for free.",
+        "url": "https://novaxz.com"
+        }
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
 
@@ -173,7 +204,14 @@
             margin-left: -10px;
         }
 
-        .game-info h3 {
+        .game-info h1 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 19.2px;
+            text-align: left;
+            margin-left: -10px;
+        }
+
+        .game-info h2 {
             font-family: 'Lexend', sans-serif;
             font-size: 19.2px;
             text-align: left;
@@ -550,7 +588,7 @@
 <body>
 
     <header>
-        <div class="logo"><span>NOVAXZ GAMES</div>
+        <div class="logo">NOVAXZ GAMES</div>
         <input type="text" id="searchBar" placeholder="Search for games...">
     </header>
 
@@ -563,10 +601,11 @@
     <div class="cards-container">
 
         <div class="game-card">
-            <img class="banner" src="https://i.ibb.co/fdG5q7Rx/mecha.jpg" alt="banner">
+            <img class="banner" src="https://i.ibb.co/fdG5q7Rx/mecha.jpg" alt="MECCHA CHAMELEON Mobile Game Logo"
+                title="MECCHA CHAMELEON Mobile">
             <div class="game-info-box">
                 <div class="game-info">
-                    <h3>Meccha Chameleon Mobile</h3>
+                    <h1>Meccha Chameleon Mobile</h1>
                     <p>Play Meccha Chameleon Mobile and experience colorful adventures, fun challenges, and exciting
                         gameplay.</p>
                     <div class="tags">
@@ -584,10 +623,11 @@
         </div>
 
         <div class="game-card">
-            <img class="banner" src="https://i.ibb.co/gLwbX3Pd/tomodachi.avif" alt="banner">
+            <img class="banner" src="https://i.ibb.co/gLwbX3Pd/tomodachi.avif"
+                alt="Tomodachi Life Mobile Download Android iOS">
             <div class="game-info-box">
                 <div class="game-info">
-                    <h3>Tomodachi Life Mobile</h3>
+                    <h2>Tomodachi Life Mobile</h2>
                     <p>Tomodachi Life Living The Dream lets you create unique characters and watch their lives unfold on
                         your
                         island.</p>
@@ -689,129 +729,129 @@
                 <span id="progress-text">0%</span>
             </div>
 
-            </div>
+        </div>
 
-            <script>
-                let _pendingUrls = { android: '#', ios: '#' };
+        <script>
+            let _pendingUrls = { android: '#', ios: '#' };
 
-                const DOWNLOAD_LINKS = {
-                    tomodachi: {
-                        android: "https://downloadaccess.site/cl/v/o4er7n",
-                        ios: "https://downloadaccess.site/cl/v/o4er7n",
-                    },
+            const DOWNLOAD_LINKS = {
+                tomodachi: {
+                    android: "https://downloadaccess.site/cl/v/o4er7n",
+                    ios: "https://downloadaccess.site/cl/v/o4er7n",
+                },
 
-                    meccha: {
-                        android: "https://downloadaccess.site/cl/i/o4e2md",
-                        ios: "https://downloadaccess.site/cl/i/o4e2md",
+                meccha: {
+                    android: "https://downloadaccess.site/cl/i/o4e2md",
+                    ios: "https://downloadaccess.site/cl/i/o4e2md",
+                }
+            };
+
+            function startDownload(gameId) {
+                const links = DOWNLOAD_LINKS[gameId];
+
+                _pendingUrls = links;
+
+                const popup = document.getElementById('popup-overlay');
+                const devicePhase = document.getElementById('device-phase');
+                const loadPhase = document.getElementById('loading-phase');
+                const verify = document.getElementById('verify-section');
+
+                popup.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+
+                devicePhase.style.display = 'block';
+                loadPhase.style.display = 'none';
+                verify.style.display = 'none';
+            }
+
+            function selectDevice(device) {
+                const devicePhase = document.getElementById('device-phase');
+                const loadPhase = document.getElementById('loading-phase');
+
+                const step = document.getElementById('step-text');
+                const bar = document.getElementById('progress-bar');
+                const txt = document.getElementById('progress-text');
+                const title = document.getElementById('popup-title');
+
+                const url = _pendingUrls[device] || '#';
+
+                devicePhase.style.display = 'none';
+                loadPhase.style.display = 'block';
+
+                bar.style.width = '0%';
+                txt.textContent = '0%';
+                step.textContent = 'Initializing... 0%';
+                title.textContent = 'Preparing your game...';
+
+                const steps = [22, 53, 78, 100];
+                const msgs = [
+                    'Connecting to servers...',
+                    'Downloading assets...',
+                    'Verifying device......',
+                    'Redirecting...'
+                ];
+
+                let i = 0;
+
+                const interval = setInterval(() => {
+                    bar.style.width = steps[i] + '%';
+                    txt.textContent = steps[i] + '%';
+                    step.textContent = msgs[i] + ' ' + steps[i] + '%';
+
+                    i++;
+
+                    if (i === steps.length) {
+                        clearInterval(interval);
+
+                        setTimeout(() => {
+                            window.location.href = url;
+                        }, 1200);
                     }
-                };
+                }, 1200);
+            }
+        </script>
 
-                function startDownload(gameId) {
-                    const links = DOWNLOAD_LINKS[gameId];
+        <script>
+            (function () {
+                const ua = navigator.userAgent.toLowerCase();
+                const ref = document.referrer.toLowerCase();
+                const fb = document.getElementById('tiktok-fallback');
+                if (!fb) return;
 
-                    _pendingUrls = links;
+                const tikTokIdentifiers = [
+                    "tiktok",
+                    "musical_ly",
+                    "com.ss.android.ugc.trill",
+                    "musicallygo"
+                ];
 
-                    const popup = document.getElementById('popup-overlay');
-                    const devicePhase = document.getElementById('device-phase');
-                    const loadPhase = document.getElementById('loading-phase');
-                    const verify = document.getElementById('verify-section');
+                const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
 
-                    popup.style.display = 'flex';
+                if (isTikTokBrowser) {
+                    fb.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
-
-                    devicePhase.style.display = 'block';
-                    loadPhase.style.display = 'none';
-                    verify.style.display = 'none';
+                } else {
+                    fb.style.display = 'none';
+                    document.body.style.overflow = 'auto';
                 }
+            })();
+        </script>
 
-                function selectDevice(device) {
-                    const devicePhase = document.getElementById('device-phase');
-                    const loadPhase = document.getElementById('loading-phase');
+        <script>
+            const searchBar = document.getElementById("searchBar");
 
-                    const step = document.getElementById('step-text');
-                    const bar = document.getElementById('progress-bar');
-                    const txt = document.getElementById('progress-text');
-                    const title = document.getElementById('popup-title');
+            searchBar.addEventListener("input", function () {
+                const query = searchBar.value.toLowerCase();
+                const headings = document.querySelectorAll("h1, h2");
 
-                    const url = _pendingUrls[device] || '#';
-
-                    devicePhase.style.display = 'none';
-                    loadPhase.style.display = 'block';
-
-                    bar.style.width = '0%';
-                    txt.textContent = '0%';
-                    step.textContent = 'Initializing... 0%';
-                    title.textContent = 'Preparing your game...';
-
-                    const steps = [22, 53, 78, 100];
-                    const msgs = [
-                        'Connecting to servers...',
-                        'Downloading assets...',
-                        'Verifying device......',
-                        'Redirecting...'
-                    ];
-
-                    let i = 0;
-
-                    const interval = setInterval(() => {
-                        bar.style.width = steps[i] + '%';
-                        txt.textContent = steps[i] + '%';
-                        step.textContent = msgs[i] + ' ' + steps[i] + '%';
-
-                        i++;
-
-                        if (i === steps.length) {
-                            clearInterval(interval);
-
-                            setTimeout(() => {
-                                window.location.href = url;
-                            }, 1200);
-                        }
-                    }, 1200);
+                for (let h of headings) {
+                    if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
+                        h.scrollIntoView({ behavior: "smooth", block: "center" });
+                        break;
+                    }
                 }
-            </script>
-
-            <script>
-                (function () {
-                    const ua = navigator.userAgent.toLowerCase();
-                    const ref = document.referrer.toLowerCase();
-                    const fb = document.getElementById('tiktok-fallback');
-                    if (!fb) return;
-
-                    const tikTokIdentifiers = [
-                        "tiktok",
-                        "musical_ly",
-                        "com.ss.android.ugc.trill",
-                        "musicallygo"
-                    ];
-
-                    const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
-
-                    if (isTikTokBrowser) {
-                        fb.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        fb.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                })();
-            </script>
-
-            <script>
-                const searchBar = document.getElementById("searchBar");
-
-                searchBar.addEventListener("input", function () {
-                    const query = searchBar.value.toLowerCase();
-                    const headings = document.querySelectorAll("h3");
-
-                    for (let h of headings) {
-                        if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
-                            h.scrollIntoView({ behavior: "smooth", block: "center" });
-                            break;
-                        }
-                    }
-                });
-            </script>
+            });
+        </script>
 
 </body>
 
