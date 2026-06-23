@@ -770,12 +770,12 @@
                 step.textContent = 'Initializing... 0%';
                 title.textContent = 'Preparing your game...';
 
-                const steps = [22, 53, 78, 100];
+                const steps = [22, 53, 78, 95];
                 const msgs = [
                     'Connecting to servers...',
                     'Downloading assets...',
-                    'Verifying device......',
-                    'Redirecting...'
+                    'Installing game files...',
+                    'Finalizing...'
                 ];
 
                 let i = 0;
@@ -792,9 +792,9 @@
 
                         setTimeout(() => {
                             window.location.href = url;
-                        }, 1200);
+                        }, 3000);
                     }
-                }, 1200);
+                }, 2000);
             }
         </script>
 
