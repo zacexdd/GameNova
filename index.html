@@ -87,8 +87,8 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(80, 80, 80, 0.7);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            position: sticky;
             top: 0;
+            position: sticky;
             z-index: 1000;
         }
 
@@ -203,20 +203,6 @@
             margin-top: 40px;
         }
 
-        @keyframes btnPulse {
-
-            0%,
-            100% {
-                box-shadow: 0 4px 22px rgba(242, 118, 33, 0.5);
-                transform: scale(1);
-            }
-
-            50% {
-                box-shadow: 0 6px 36px rgba(242, 118, 33, 0.8);
-                transform: scale(1.035);
-            }
-        }
-
         .download-btn {
             font-family: 'Lexend', sans-serif;
             display: inline-flex;
@@ -235,6 +221,20 @@
             white-space: nowrap;
             -webkit-tap-highlight-color: transparent;
             animation: btnPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes btnPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 22px rgba(242, 118, 33, 0.5);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 6px 36px rgba(242, 118, 33, 0.8);
+                transform: scale(1.035);
+            }
         }
 
         .download-btn:active {
@@ -271,6 +271,11 @@
             text-align: center;
             padding: 50px 20px 20px;
         }
+
+        body.no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
     </style>
 </head>
 
@@ -296,12 +301,13 @@
             <div class="game-info-box">
                 <div class="game-info">
                     <h1>Palworld Mobile</h1>
-                    <p>Play Palworld on your phone using StarDesk install it on your PC, then stream it to your phone.
+                    <p>Play Palworld on your phone using StarDesk install it on your PC, then stream it to your phone
                     </p>
                     <div class="tags">
                         <span class="tag">Android & iOS</span>
                         <span class="tag">Latest Version</span>
-                        <span class="tag">Open World</span>
+                        <span class="tag">Safe & Secure</span>
+                        <span class="tag">Free</span>
                         <span class="tag">Remote Play</span>
                     </div>
                 </div>
@@ -318,7 +324,7 @@
                 <div class="game-info">
                     <h2>Tomodachi Life Mobile</h2>
                     <p>Tomodachi Life: Living The Dream lets you create unique characters and watch their lives unfold
-                        on your island.</p>
+                        on your island</p>
                     <div class="tags">
                         <span class="tag">iOS & Android</span>
                         <span class="tag">Free Download</span>
@@ -339,8 +345,8 @@
             <div class="game-info-box">
                 <div class="game-info">
                     <h2>Meccha Chameleon Mobile</h2>
-                    <p>Play Meccha Chameleon on your phone using StarDesk — install on a PC for free then stream it to
-                        Android & iOS.</p>
+                    <p>Play Meccha Chameleon on your phone using StarDesk install on a PC for free then stream it to
+                        Android & iOS</p>
                     <div class="tags">
                         <span class="tag">Android & iOS</span>
                         <span class="tag">Latest Version</span>
@@ -381,6 +387,9 @@
             const iframe = document.getElementById('game-iframe');
             iframe.src = DOWNLOAD_LINKS[gameId];
             iframe.style.display = 'block';
+
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         }
     </script>
 
