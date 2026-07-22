@@ -4,41 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/nova.png" type="image/png">
+    <link rel="icon" href="img/pal.webp" type="image/webp">
 
-    <title>NovaXZ - Download PC Games for Android & iPhone</title>
+    <title>Palworld Mobile Download - Android & iPhone</title>
 
     <meta name="description"
-        content="Download the latest PC games for Android and iPhone. NovaXZ provides game downloads, installation guides, gameplay tutorials, and mobile game updates.">
+        content="Download Palworld Mobile for Android and iPhone with NovaXZ. Get the installation guide, setup instructions, and learn how to play Palworld on your phone.">
 
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="author" content="NovaXZ">
 
-    <link rel="canonical" href="https://novaxz.com/">
+    <link rel="canonical" href="https://novaxz.com/palworld-mobile">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://novaxz.com/">
-    <meta property="og:title" content="NovaXZ - Download PC Games for Android & iPhone">
+    <meta property="og:url" content="https://novaxz.com/palworld-mobile">
+    <meta property="og:title" content="Palworld Mobile Download - Android & iPhone | NovaXZ">
     <meta property="og:description"
-        content="Download the latest PC games for Android and iPhone. NovaXZ provides game downloads, installation guides, gameplay tutorials, and mobile game updates.">
-    <meta property="og:image" content="https://novaxz.com/img/nova.png">
+        content="Download and play Palworld Mobile on Android and iPhone. Follow the complete setup guide and enjoy Palworld gameplay on mobile.">
+    <meta property="og:image" content="https://novaxz.com/img/palworldmobile.webp">
     <meta property="og:site_name" content="NovaXZ">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NovaXZ - Download PC Games for Android & iPhone">
+    <meta name="twitter:title" content="Palworld Mobile Download - Android & iPhone | NovaXZ">
     <meta name="twitter:description"
-        content="Download the latest PC games for Android and iPhone. NovaXZ provides game downloads, installation guides, gameplay tutorials, and mobile game updates.">
-    <meta name="twitter:image" content="https://novaxz.com/img/nova.png">
+        content="Download Palworld Mobile for Android and iPhone with a complete installation and setup guide.">
+    <meta name="twitter:image" content="https://novaxz.com/img/palworldmobile.webp">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "NovaXZ",
-      "url": "https://novaxz.com/",
-      "description": "Download the latest PC games for Android and iPhone. NovaXZ provides game downloads, installation guides, gameplay tutorials, and mobile game updates.",
-      "inLanguage": "en"
-    }
+        {
+        "@context":"https://schema.org",
+        "@type":"WebPage",
+        "name":"Palworld Mobile Download",
+        "url":"https://novaxz.com/palworld-mobile",
+        "description":"Download Palworld Mobile for Android and iPhone with installation guides and setup instructions from NovaXZ.",
+        "inLanguage":"en"
+        }
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -107,9 +107,9 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 15px 20px;
+            padding: 0px 20px;
             margin-bottom: 20px;
-            background: #191A1E;
+            background: #212226;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(80, 80, 80, 0.7);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
@@ -119,11 +119,7 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #fff;
+            width: 120px;
         }
 
         #searchBar {
@@ -346,14 +342,78 @@
                 opacity: 0;
             }
         }
+
+        .faq-list {
+            margin: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(80, 80, 80, 0.7);
+            border-radius: 8px;
+            background: #212226;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .faq-arrow {
+            font-style: normal;
+            font-size: 14px;
+            color: #666;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            padding: 0 16px 14px;
+            padding-top: 12px;
+            border: 1px solid rgba(80, 80, 80, 0.7);
+            font-size: 14px;
+            line-height: 1.7;
+            color: #D1D5DB;
+        }
+
+        .faq {
+            font-size: 19px;
+            text-align: left;
+            font-weight: bold;
+            margin: 40px 15px 20px 15px;
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <div class="logo">NOVAXZ GAMES</div>
-        <input type="text" id="searchBar" placeholder="Search for games...">
+        <img src="img/palworldmobile.png" class="logo" alt="palworld mobile">
     </header>
 
     <div class="breadcrumb">
@@ -365,34 +425,12 @@
     <div class="cards-container">
 
         <div class="game-card">
-            <img class="banner" src="img/dearpassengermobile.webp" alt="Dear Passengers Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h1>Dear Passengers Mobile</h1>
-                    <p>Play Dear Passengers on your Android or iPhone using stardesk, install the game on your PC, then
-                        stream it on your phone
-                    </p>
-                    <div class="tags">
-                        <span class="tag">iOS & Android</span>
-                        <span class="tag">Trending</span>
-                        <span class="tag">Safe & Secure</span>
-                        <span class="tag">#1</span>
-                        <span class="tag">Remote Play</span>
-                    </div>
-                </div>
-            </div>
-            <button class="download-btn" onclick="startRedirect('dearpassenger')">
-                <img src="img/download.png" class="download" alt="Download">
-                Download Now
-            </button>
-        </div>
-
-        <div class="game-card">
             <img class="banner" src="img/palworldmobile.webp" alt="Palworld Mobile">
             <div class="game-info-box">
                 <div class="game-info">
                     <h1>Palworld Mobile</h1>
-                    <p>Play Palworld on your phone using StarDesk install it on your PC, then stream it to your phone
+                    <p>Play Palworld on your Android or iPhone using StarDesk. Install it on your PC, then stream the
+                        game directly to your phone.
                     </p>
                     <div class="tags">
                         <span class="tag">Android & iOS</span>
@@ -404,66 +442,60 @@
                 </div>
             </div>
             <button class="download-btn" onclick="startRedirect('palworld')">
-                <img src="img/download.png" class="download" alt="downlaod">
+                <img src="img/download.png" class="download" alt="">
                 Download Now
             </button>
         </div>
-
-        <div class="game-card">
-            <img class="banner" src="img/tomodachi.webp" alt="Tomodachi Life Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h2>Tomodachi Life Mobile</h2>
-                    <p>Tomodachi Life: Living The Dream lets you create unique characters and watch their lives unfold
-                        on your island</p>
-                    <div class="tags">
-                        <span class="tag">iOS & Android</span>
-                        <span class="tag">Free Download</span>
-                        <span class="tag">Safe</span>
-                        <span class="tag">Latest Version</span>
-                        <span class="tag">Popular</span>
-                    </div>
-                </div>
-            </div>
-            <button class="download-btn" onclick="startRedirect('tomodachi')">
-                <img src="img/download.png" class="download" alt="downlaod">
-                Download Now
-            </button>
-        </div>
-
-        <div class="game-card">
-            <img class="banner" src="img/mecha.webp" alt="Meccha Chameleon Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h2>Meccha Chameleon Mobile</h2>
-                    <p>Play Meccha Chameleon on your phone using StarDesk install on a PC for free then stream it to
-                        Android & iOS</p>
-                    <div class="tags">
-                        <span class="tag">Android & iOS</span>
-                        <span class="tag">Latest Version</span>
-                        <span class="tag">Free</span>
-                        <span class="tag">Remote Play</span>
-                        <span class="tag">Trending</span>
-                    </div>
-                </div>
-            </div>
-            <button class="download-btn" onclick="startRedirect('meccha')">
-                <img src="img/download.png" class="download" alt="downlaod">
-                Download Now
-            </button>
-        </div>
-
     </div>
 
-    <footer>© 2026 NovaXZ. All rights reserved.</footer>
+    <div class="faq">FAQ</div>
 
-    <div id="tiktok-fallback">
-        <img src="https://www9.0zz0.com/2024/04/06/13/548511907.gif" alt="Instruction GIF"
-            style="max-width:100%;height:auto;max-height:70vh;margin-bottom:15px;border-radius:8px;" />
-        <p style="font-family:sans-serif;font-size:18px;color:#fff;margin:0;">
-            🚀 For protection and safety, please <b>Open in Browser</b>.
-        </p>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Is this safe to use?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes. We focus on providing a safe experience and clear instructions so you can use it with
+                    confidence.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Will this work on my device?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>Our guides are designed for mobile users. Check the requirements and follow the steps to make sure
+                    everything works correctly.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Is there a guide to help me set it up?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes. We provide a step-by-step guide to help you install and start using it easily.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Why should I trust this website?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>We provide clear information, easy-to-follow guides, and regularly update our content to give users
+                    the best experience.</p>
+            </div>
+        </div>
     </div>
+
+    <footer>© 2026 Palworld Mobile.</footer>
 
     <div id="loading-overlay">
         <div class="loader-ball-wrap">
@@ -475,10 +507,7 @@
 
     <script>
         const DOWNLOAD_LINKS = {
-            tomodachi: "https://downloadaccess.site/cl/v/o4er7n",
-            meccha: "https://downloadaccess.site/cl/i/o4e2md",
             palworld: "https://downloadaccess.site/cl/i/9vmw6p",
-            dearpassenger: "https://store.steampowered.com/app/4534960/Dear_Passengers",
         };
 
         function startRedirect(gameId) {
@@ -497,29 +526,19 @@
     </script>
 
     <script>
-        (function () {
-            const ua = navigator.userAgent.toLowerCase();
-            const ref = document.referrer.toLowerCase();
-            const fb = document.getElementById('tiktok-fallback');
-            if (!fb) return;
-            const ids = ["tiktok", "musical_ly", "com.ss.android.ugc.trill", "musicallygo"];
-            if (ids.some(id => ua.includes(id)) || ref.includes("tiktok")) {
-                fb.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-        })();
-    </script>
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var answer = btn.nextElementSibling;
+                var isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-    <script>
-        const searchBar = document.getElementById("searchBar");
-        searchBar.addEventListener("input", function () {
-            const query = searchBar.value.toLowerCase();
-            for (let h of document.querySelectorAll("h1, h2")) {
-                if (query !== "" && h.textContent.toLowerCase().startsWith(query)) {
-                    h.scrollIntoView({ behavior: "smooth", block: "center" });
-                    break;
+                if (isOpen) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    answer.style.maxHeight = '0px';
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
-            }
+            });
         });
     </script>
 
