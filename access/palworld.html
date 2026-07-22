@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/nova.png" type="image/png">
+
+    <title>NovaXZ - Palworld</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        body {
+            background: #191A1E;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .cards-container {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 24px;
+                padding: 30px 40px 60px;
+                overflow-x: hidden;
+                box-sizing: border-box;
+            }
+
+            .nav-card {
+                width: 420px;
+                max-width: 420px;
+                min-width: 300px;
+                margin: 0 !important;
+                flex: 0 0 420px;
+                box-sizing: border-box;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 900px) {
+            .nav-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 13px;
+            color: #888;
+            max-width: 300px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .nav-card {
+            background: #212226;
+            margin: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(50, 50, 50, 0.3);
+            padding: 12px;
+            border: 1px solid rgba(80, 80, 80, 0.7);
+        }
+
+        .card-banner {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            aspect-ratio: 16/9;
+        }
+
+        .game-info-box {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .card-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .tuto-tag {
+            color: #f51e1e;
+        }
+
+        .games-tag {
+            color: #4fc3f7;
+        }
+
+        .game-info h2 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 19px;
+            text-align: left;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .game-info p {
+            font-size: 14px;
+            color: #D1D5DB;
+            margin-top: 8px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .stat {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .stat span {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            color: #ddd;
+            margin-bottom: 1px;
+        }
+
+        .card-btn {
+            font-family: 'Lexend', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 40px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 15px;
+            display: block;
+            margin: 15px auto 15px;
+            width: fit-content;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .card-btn:active {
+            transform: translateY(-3px);
+        }
+
+        .tuto-btn {
+            background: linear-gradient(135deg, #ff1414, #cb0000);
+            border: 1px solid #444;
+        }
+
+        .games-btn {
+            background: linear-gradient(135deg, #29b6f6, #0277bd);
+            border: 1px solid #444;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <h1>WELCOME TO PALWORLD DOWNLOAD PAGE</h1>
+        <p>The files and tutorials are available below to help you download Tomodachi Life on your
+            phone & pc.</p>
+    </div>
+
+    <div class="cards-container">
+
+        <div class="nav-card">
+            <img class="card-banner"
+                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/6912f19c43a95ff5fe514eedd35e68bf12335459/header.jpg?t=1783654507"
+                alt="Games">
+            <div class="game-info-box">
+                <div class="game-info">
+                    <div class="card-tag games-tag">File</div>
+                    <h2>Palworld File</h2>
+                    <p>Please watch the tutorial below to understand how to download it properly.</p>
+                    <div class="card-stats">
+                        <div class="stat"><span>33</span>GB</div>
+                        <div class="stat"><span>Pc</span>Devices</div>
+                        <div class="stat"><span>New</span>2026</div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://steamrip.com/palworld-free-download-2p" target="_blank" class="card-btn games-btn">Download
+                Now →</a>
+        </div>
+
+        <div class="nav-card">
+            <img class="card-banner" src="https://i.ytimg.com/vi/-BQNQhw2b_w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC4aeEBQFrH4Bfdag80KIECnaTagw" alt="Games">
+            <div class="game-info-box">
+                <div class="game-info">
+                    <div class="card-tag tuto-tag">TUTORIAL</div>
+                    <h2>Palworld Mobile Tutorial</h2>
+                    <p>You need to watch this tutorial to learn how to download it on mobile devices.</p>
+                    <div class="card-stats">
+                        <div class="stat"><span>5m</span>Tuto</div>
+                        <div class="stat"><span>All</span>Devices</div>
+                        <div class="stat"><span>New</span>2026</div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://youtu.be/-BQNQhw2b_w?si=ftNwi-r37BxK1eOT" target="_blank" class="card-btn tuto-btn">Watch
+                Now →</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Novaxz. All rights reserved.
+    </footer>
+
+    <script>
+        (function () {
+            const ua = navigator.userAgent.toLowerCase();
+            const ref = document.referrer.toLowerCase();
+            const fb = document.getElementById('tiktok-fallback');
+            const tikTokIdentifiers = ["tiktok", "musical_ly", "com.ss.android.ugc.trill", "musicallygo"];
+            const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
+            if (isTikTokBrowser) {
+                fb.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
