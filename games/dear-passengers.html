@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/dear-favicon.webp" type="image/webp">
+
+    <title>Dear Passengers Mobile (Android & iPhone) - Download & Installation Guide</title>
+
+    <meta name="description"
+        content="Learn how to play Dear Passengers on Android and iPhone with our complete mobile guide. Find installation steps, system requirements, gameplay tips, and everything you need to enjoy Dear Passengers on mobile.">
+
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="author" content="NovaXZ">
+
+    <link rel="canonical" href="https://novaxz.com/dear-passengers-mobile">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://novaxz.com/dear-passengers-mobile">
+    <meta property="og:title" content="Dear Passengers Mobile (Android & iPhone) - Installation Guide | NovaXZ">
+    <meta property="og:description"
+        content="Play Dear Passengers on Android and iPhone with our complete installation guide. Learn setup steps, device requirements, and how to enjoy the game on mobile.">
+    <meta property="og:image" content="https://novaxz.com/img/dearpassengermobile.webp">
+    <meta property="og:site_name" content="NovaXZ">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dear Passengers Mobile (Android & iPhone) - Installation Guide">
+    <meta name="twitter:description"
+        content="Complete Dear Passengers Mobile guide for Android and iPhone. Learn how to install, set up, and play Dear Passengers on your phone.">
+    <meta name="twitter:image" content="https://novaxz.com/img/dearpassengermobile.webp">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Dear Passengers Mobile",
+        "url": "https://novaxz.com/dear-passengers-mobile",
+        "description": "Complete Dear Passengers Mobile installation guide for Android and iPhone with setup instructions, gameplay information, and mobile tips.",
+        "inLanguage": "en"
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+            {
+            "@type":"Question",
+            "name":"Is Dear Passengers available on Android?",
+            "acceptedAnswer":{
+                "@type":"Answer",
+                "text":"There is currently no official Android version of Dear Passengers. This guide explains how to play the PC version on Android using StarDesk remote play."
+            }
+            },
+            {
+            "@type":"Question",
+            "name":"Can I play Dear Passengers on iPhone?",
+            "acceptedAnswer":{
+                "@type":"Answer",
+                "text":"Yes. iPhone users can stream the PC version through StarDesk after completing the setup process."
+            }
+            },
+            {
+            "@type":"Question",
+            "name":"Do I need a gaming PC?",
+            "acceptedAnswer":{
+                "@type":"Answer",
+                "text":"Yes. Dear Passengers runs on your Windows PC while your phone streams the gameplay."
+            }
+            },
+            {
+            "@type":"Question",
+            "name":"Does Dear Passengers have an official mobile version?",
+            "acceptedAnswer":{
+                "@type":"Answer",
+                "text":"At the moment, there is no official Android or iPhone version. This page explains how to play the PC version on mobile."
+            }
+            }
+        ]
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        body {
+            background: #191A1E;
+            color: #eee;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px 40px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            #searchBar {
+                margin-top: 0;
+                width: 320px;
+                padding: 10px 20px 10px 40px;
+            }
+
+            .breadcrumb {
+                margin: 20px 30px;
+            }
+
+            .cards-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                padding: 0 20px 20px;
+            }
+
+            .game-card {
+                margin: 0;
+            }
+
+            .download-btn {
+                width: 80%;
+                box-sizing: border-box;
+                padding: 12px 20px;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .cards-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            background: #191A1E;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(80, 80, 80, 0.7);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            top: 0;
+            position: sticky;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        #searchBar {
+            font-family: 'Lexend', sans-serif;
+            padding: 10px 100px 10px 40px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border: 1px solid rgba(80, 80, 80, 0.7);
+            outline: none;
+            font-size: 13px;
+            background: #212226;
+            color: #fff;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+            background-image: url('https://i.ibb.co/27VDchNc/search.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 18px 18px;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin: 15px 20px;
+            text-align: left;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #aaa;
+        }
+
+        .breadcrumb span {
+            color: #fff;
+        }
+
+        .game-card {
+            background-color: #212226;
+            margin: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(50, 50, 50, 0.3);
+            padding: 12px;
+            border: 1px solid rgba(80, 80, 80, 0.7);
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            aspect-ratio: 16/9;
+        }
+
+        .game-info-box {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .game-info p {
+            font-size: 14px;
+            color: #D1D5DB;
+            margin-top: 10px;
+            text-align: left;
+            margin-left: -10px;
+        }
+
+        .game-info h1,
+        .game-info h2 {
+            font-size: 19.2px;
+            text-align: left;
+            margin-left: -10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+            margin-left: -10px;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: #ddd;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 6px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+            backdrop-filter: blur(6px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        .download-btn {
+            font-family: 'Lexend', sans-serif;
+            display: inline-flex;
+            background: linear-gradient(180deg, #F5AD1E 0%, #F27621 100%);
+            border: none;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 40px;
+            margin: 15px 0;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+            animation: btnPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes btnPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 22px rgba(242, 118, 33, 0.5);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 6px 36px rgba(242, 118, 33, 0.8);
+                transform: scale(1.035);
+            }
+        }
+
+        .download-btn:active {
+            transform: translateY(-3px);
+        }
+
+        .download {
+            width: 18px !important;
+            height: auto !important;
+            position: relative;
+            right: 5px;
+        }
+
+        #tiktok-fallback {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100dvh;
+            background: #191A1E;
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-ball-wrap {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .loader-ball-wrap>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            margin: 0;
+            border-radius: 100%;
+            width: 120px;
+            height: 120px;
+            background-color: #F27621;
+            animation: ball-scale-multiple 1s 0s linear infinite;
+        }
+
+        .loader-ball-wrap>div:nth-child(2) {
+            animation-delay: -0.4s;
+        }
+
+        .loader-ball-wrap>div:nth-child(3) {
+            animation-delay: -0.2s;
+        }
+
+        @keyframes ball-scale-multiple {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        .faq-list {
+            margin: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(80, 80, 80, 0.7);
+            border-radius: 8px;
+            background: #212226;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .faq-arrow {
+            font-style: normal;
+            font-size: 14px;
+            color: #666;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            padding: 0 16px 14px;
+            padding-top: 12px;
+            border: 1px solid rgba(80, 80, 80, 0.7);
+            font-size: 14px;
+            line-height: 1.7;
+            color: #D1D5DB;
+        }
+
+        .faq {
+            font-size: 19px;
+            text-align: left;
+            font-weight: bold;
+            margin: 40px 15px 20px 15px;
+        }
+
+        .seo-section {
+            background: #212226;
+            margin: 20px 15px;
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(80, 80, 80, .7);
+            box-shadow: 0 0 15px rgba(50, 50, 50, .3);
+            text-align: left;
+        }
+
+        .seo-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+        .seo-section p {
+            color: #D1D5DB;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .seo-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .seo-section strong {
+            color: #fff;
+        }
+
+        @media (min-width:768px) {
+            .seo-section {
+                padding: 30px;
+            }
+
+            .seo-section h2 {
+                font-size: 28px;
+            }
+
+            .seo-section p {
+                font-size: 16px;
+            }
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .requirements-list li {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            color: #D1D5DB;
+            line-height: 1.7;
+        }
+
+        .requirements-list strong {
+            color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 10px;
+            padding: 18px;
+            transition: .25s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #F27621;
+        }
+
+        .feature-card h3 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #D1D5DB;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        @media(min-width:768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width:1200px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .install-steps {
+            margin-top: 20px;
+            padding-left: 22px;
+        }
+
+        .install-steps li {
+            margin-bottom: 28px;
+            color: #D1D5DB;
+        }
+
+        .install-steps strong {
+            display: block;
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .install-steps p {
+            margin: 0;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NOVAXZ GAMES</div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="https://novaxz.com">Home</a> &gt;
+        <a href="https://novaxz.com">Games</a> &gt;
+        <span>Download</span>
+    </div>
+
+    <div class="cards-container">
+
+        <div class="game-card">
+            <img class="banner" src="/img/dearpassengermobile.webp" alt="Dear Passengers Mobile">
+            <div class="game-info-box">
+                <div class="game-info">
+                    <h1>Dear Passengers Mobile (Android & iPhone)</h1>
+                    <p>
+                        Want to play <strong>Dear Passengers</strong> on your Android phone or iPhone? This complete
+                        mobile guide shows you how to enjoy the PC version using StarDesk remote play. Learn the
+                        installation process, supported devices, recommended settings, and everything you need for a
+                        smooth mobile gaming experience.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Android</span>
+                        <span class="tag">iPhone</span>
+                        <span class="tag">Remote Play</span>
+                        <span class="tag">Installation Guide</span>
+                        <span class="tag">PC Game</span>
+                    </div>
+                </div>
+            </div>
+            <button class="download-btn" onclick="startRedirect('dearpassengers')">
+                <img src="/img/download.png" class="download" alt="Download">
+                Download Now
+            </button>
+        </div>
+    </div>
+
+    <section class="seo-section">
+        <div class="game-info">
+            <h2>What is Dear Passengers Mobile?</h2>
+
+            <p>
+                Dear Passengers is a story-driven PC game that has attracted attention for its unique atmosphere,
+                immersive gameplay, and mysterious world. While there is currently no official Android or iPhone
+                version available, you can still enjoy the game on your mobile device using remote play technology.
+            </p>
+
+            <p>
+                This guide explains how to access Dear Passengers on your phone by streaming the PC version with
+                StarDesk. You'll also learn about supported devices, performance tips, and everything you need to
+                get started.
+            </p>
+        </div>
+    </section>
+
+    <section class="seo-section">
+        <div class="game-info">
+            <h2>How to Play Dear Passengers on Android & iPhone</h2>
+
+            <p>
+                Playing Dear Passengers on mobile is simple. Install the game on your Windows PC, connect through
+                StarDesk, and stream the game directly to your Android phone or iPhone over your local network or
+                the internet.
+            </p>
+
+            <p>
+                Once connected, you can use touch controls or an external controller for a comfortable gaming
+                experience while keeping the graphics and performance of the PC version.
+            </p>
+        </div>
+    </section>
+
+    <section class="seo-section">
+        <h2>Dear Passengers Mobile System Requirements</h2>
+
+        <p>
+            Since Dear Passengers runs through remote play, your phone doesn't need powerful hardware. The game is
+            processed on your PC while the video is streamed to your Android device or iPhone.
+        </p>
+
+        <ul class="requirements-list">
+            <li><strong>Operating System:</strong> Android 10+ or iOS 16+</li>
+            <li><strong>Internet:</strong> Stable Wi-Fi or 5G connection</li>
+            <li><strong>PC:</strong> Windows 10/11 with Dear Passengers installed</li>
+            <li><strong>Remote Play:</strong> StarDesk installed on both devices</li>
+            <li><strong>Controller:</strong> Optional (Bluetooth supported)</li>
+        </ul>
+    </section>
+
+    <section class="seo-section">
+        <h2>Dear Passengers Mobile Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <h3>High-Quality Graphics</h3>
+                <p>Stream the original PC version with impressive visuals directly to your mobile device.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Android & iPhone Support</h3>
+                <p>Play Dear Passengers on both Android phones and iPhones using compatible remote play software.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Low-Latency Streaming</h3>
+                <p>A stable Wi-Fi or 5G connection provides responsive gameplay with minimal input delay.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Controller Compatible</h3>
+                <p>Connect a Bluetooth controller for a more comfortable gaming experience.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Simple Setup</h3>
+                <p>Install the game on your PC, connect through StarDesk, and start playing in just a few minutes.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Regular Guide Updates</h3>
+                <p>We keep this guide updated with the latest information, compatibility changes, and setup tips.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="seo-section">
+        <h2>How to Install Dear Passengers on Android & iPhone</h2>
+
+        <ol class="install-steps">
+            <li>
+                <strong>Download Dear Passengers</strong>
+                <p>Install Dear Passengers on your Windows PC from its official platform.</p>
+            </li>
+
+            <li>
+                <strong>Install StarDesk</strong>
+                <p>Download and install StarDesk on both your PC and your Android phone or iPhone.</p>
+            </li>
+
+            <li>
+                <strong>Connect Your Devices</strong>
+                <p>Sign in to the same StarDesk account and connect your mobile device to your computer.</p>
+            </li>
+
+            <li>
+                <strong>Launch Dear Passengers</strong>
+                <p>Start the game on your PC and begin streaming it directly to your phone.</p>
+            </li>
+
+            <li>
+                <strong>Enjoy Playing</strong>
+                <p>Adjust the streaming quality and controls to get the best mobile gaming experience.</p>
+            </li>
+        </ol>
+    </section>
+
+    <div class="faq">FAQ</div>
+
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Is Dear Passengers available on Android?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>There is currently no official Android version of Dear Passengers. However, you can play the PC
+                    version on your Android device using StarDesk remote play.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Can I play Dear Passengers on iPhone?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes. iPhone users can stream the PC version of Dear Passengers through StarDesk after completing the
+                    setup process.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Do I need a gaming PC?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>Since the game runs on your computer, a PC that meets the game's recommended requirements is required
+                    for the best experience.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Is StarDesk free?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>StarDesk offers free access for basic remote play features. Check the latest version for any premium
+                    options or additional features.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Does Dear Passengers have an official mobile version?</span>
+                <i class="faq-arrow">&#9662;</i>
+            </button>
+            <div class="faq-answer">
+                <p>At the time of writing, there is no official Android or iPhone release. This guide explains how to
+                    enjoy the PC version on your mobile device through remote play.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>© 2026 NovaXZ. All rights reserved.</footer>
+
+    <div id="loading-overlay">
+        <div class="loader-ball-wrap">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        const DOWNLOAD_LINKS = {
+            dearpassengers: "https://downloadaccess.site/cl/i/9vmw6p",
+        };
+
+        function startRedirect(gameId) {
+            const url = DOWNLOAD_LINKS[gameId];
+            if (!url) return;
+
+            const overlay = document.getElementById('loading-overlay');
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 2000);
+        }
+    </script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var answer = btn.nextElementSibling;
+                var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+                if (isOpen) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    answer.style.maxHeight = '0px';
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
