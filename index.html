@@ -57,35 +57,6 @@
             text-align: center;
         }
 
-        @media (min-width: 768px) {
-            .breadcrumb {
-                margin-bottom: -3px !important;
-                margin-left: 25px !important;
-            }
-
-            .cards-container {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                padding: 0 10px 20px;
-            }
-
-            .game-card {
-                margin: 0;
-            }
-
-            .download-btn {
-                width: 80%;
-                box-sizing: border-box;
-                padding: 12px 20px;
-            }
-        }
-
-        @media (min-width: 1100px) {
-            .cards-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
         header {
             position: sticky;
             top: 0;
@@ -164,81 +135,178 @@
             color: #aaa;
         }
 
-        .breadcrumb {
-            font-size: 0.8rem;
-            color: #aaa;
-            margin: 15px 20px;
+        .hero {
+            margin: 0 15px 10px;
+            margin-top: 20px;
+            padding: 28px 20px 26px;
+            background: #212226;
+            border-radius: 14px;
+            border: 1px solid rgba(80, 80, 80, 0.7);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(242, 118, 33, 0.12);
+            border: 1px solid rgba(242, 118, 33, 0.35);
+            color: #F5AD1E;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .badge-icon {
+           position: relative;
+           bottom: 2px;
+        }
+
+        .hero h1 {
+            font-size: 22px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #F5AD1E, #F27621);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 13px;
+            color: #9AA0AB;
+            line-height: 1.6;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .hero-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .hero-pill {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: #ccc;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 999px;
+        }
+
+        .hero-pill svg {
+            width: 13px;
+            height: 13px;
+            opacity: 0.8;
+        }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 20px 15px 10px;
             text-align: left;
         }
 
-        .breadcrumb a {
-            text-decoration: none;
-            color: #aaa;
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(80, 80, 80, 0.6);
         }
 
-        .breadcrumb span {
-            color: #fff;
+        .section-label .fire {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(180deg, #F5AD1E, #F27621);
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(242, 118, 33, 0.7);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 0 15px 20px;
+        }
+
+        @media (min-width: 640px) {
+            .cards-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .cards-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
         }
 
         .game-card {
-            background-color: #212226;
-            margin: 20px 15px;
+            background: #212226;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(50, 50, 50, 0.3);
-            padding: 12px;
             border: 1px solid rgba(80, 80, 80, 0.7);
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: border-color 0.2s;
+            text-align: left;
         }
 
-        .banner {
+        .game-card:active {
+            border-color: rgba(242, 118, 33, 0.5);
+        }
+
+        .game-card img.banner {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            display: block;
             aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
         }
 
-        .game-info-box {
-            display: flex;
-            gap: 15px;
-            padding: 20px;
+        .card-body {
+            padding: 9px 10px 11px;
         }
 
-        .game-info {
-            flex: 1;
-        }
-
-        .game-info p {
-            font-size: 14px;
-            color: #D1D5DB;
-            margin-top: 10px;
-            text-align: left;
-            margin-left: -10px;
-        }
-
-        .game-info h1,
-        .game-info h2 {
-            font-size: 19.2px;
-            text-align: left;
-            margin-left: -10px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-            margin-left: -10px;
-        }
-
-        .tag {
-            font-size: 12px;
-            color: #ddd;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 6px 10px;
-            border-radius: 999px;
+        .card-body h2 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #eee;
+            line-height: 1.3;
+            margin-bottom: 4px;
             white-space: nowrap;
-            backdrop-filter: blur(6px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-body .updated {
+            font-size: 10.5px;
+            color: #666;
         }
 
         footer {
@@ -246,34 +314,7 @@
             padding: 20px;
             color: #aaa;
             font-size: 0.9rem;
-            margin-top: 40px;
-        }
-
-        .download-btn {
-            font-family: 'Lexend', sans-serif;
-            display: inline-flex;
-            background: linear-gradient(180deg, #F5AD1E 0%, #F27621 100%);
-            box-shadow: 0 0 20px rgb(255 136 0 / 60%);
-            border: none;
-            color: #fff;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 12px 40px;
-            margin: 15px 0;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            white-space: nowrap;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .download {
-            width: 18px !important;
-            height: auto !important;
-            position: relative;
-            right: 5px;
+            margin-top: 20px;
         }
 
         #tiktok-fallback {
@@ -359,140 +400,90 @@
                 <img src="img/favicon.png" alt="NovaXZ">
                 <span>NovaXZ</span>
             </a>
-
             <button id="searchBtn">
                 <img id="searchIcon" src="https://i.ibb.co/27VDchNc/search.png" alt="Search">
             </button>
         </div>
-
         <div class="search-container">
             <input type="text" id="searchBar" placeholder="Search for games...">
         </div>
     </header>
 
-    <div class="breadcrumb">
-        <a href="https://novaxz.com">Home</a> &gt;
-        <a href="https://novaxz.com">Games</a> &gt;
-        <span>Download</span>
+    <div class="hero">
+        <div class="hero-badge"> <span class="badge-icon">🎮</span>
+            PC Games on Mobile
+        </div>
+        <h1>Play <span>PC Games</span> on<br>Android & iOS</h1>
+        <p>Download and stream PC games directly on your phone using emulators &amp; remote play.</p>
+        <div class="hero-pills">
+            <span class="hero-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 18H12.01M8 21H16C17.1046 21 18 20.1046 18 19V5C18 3.89543 17.1046 3 16 3H8C6.89543 3 6 3.89543 6 5V19C6 20.1046 6.89543 21 8 21Z" />
+                </svg>
+                Android &amp; iOS
+            </span>
+            <span class="hero-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" />
+                </svg>
+                Remote Play
+            </span>
+            <span class="hero-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Free &amp; Safe
+            </span>
+        </div>
+    </div>
+
+    <div class="section-label">
+        <span class="fire"></span>
+        Trending Games
     </div>
 
     <div class="cards-container">
 
-        <div class="game-card">
+        <div class="game-card" onclick="startRedirect('bigwalk')">
             <img class="banner" src="img/bigwalk.jpg" alt="Big Walk Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h2>Big Walk Mobile</h2>
-                    <p style="font-size:12px;color:#8a8f98;margin-top:6px;">Last updated: August 11, 2026</p>
-                    <p>Play Big Walk on your Android or iOS using stardesk install the game on your PC then
-                        stream it on your phone
-                    </p>
-                    <div class="tags">
-                        <span class="tag">iOS</span>
-                        <span class="tag">Android</span>
-                        <span class="tag">Trending</span>
-                        <span class="tag">Free & Secure</span>
-                        <span class="tag">Remote Play</span>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h2>Big Walk Mobile</h2>
+                <div class="updated">Aug 11, 2026</div>
             </div>
-            <button class="download-btn" onclick="startRedirect('bigwalk')">
-                <img src="img/download.png" class="download" alt="downlaod">
-                Download Now
-            </button>
         </div>
 
-        <div class="game-card">
+        <div class="game-card" onclick="startRedirect('palworld')">
             <img class="banner" src="img/palworldmobile.webp" alt="Palworld Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h2>Palworld Mobile</h2>
-                    <p style="font-size:12px;color:#8a8f98;margin-top:6px;">Last updated: July 22, 2026</p>
-                    <p>Play Palworld on your phone using StarDesk install it on your PC, then stream it to your phone
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Android & iOS</span>
-                        <span class="tag">Latest Version</span>
-                        <span class="tag">Safe & Secure</span>
-                        <span class="tag">Free</span>
-                        <span class="tag">Remote Play</span>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h2>Palworld Mobile</h2>
+                <div class="updated">Jul 22, 2026</div>
             </div>
-            <button class="download-btn" onclick="startRedirect('palworld')">
-                <img src="img/download.png" class="download" alt="downlaod">
-                Download Now
-            </button>
         </div>
 
-        <div class="game-card">
+        <div class="game-card" onclick="startRedirect('tomodachi')">
             <img class="banner" src="img/tomodachi.webp" alt="Tomodachi Life Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h2>Tomodachi Life Mobile</h2>
-                    <p style="font-size:12px;color:#8a8f98;margin-top:6px;">Last updated: July 03, 2026</p>
-                    <p>Tomodachi Life: Living The Dream lets you create unique characters and watch their lives unfold
-                        on your island</p>
-                    <div class="tags">
-                        <span class="tag">iOS & Android</span>
-                        <span class="tag">Free Download</span>
-                        <span class="tag">Safe</span>
-                        <span class="tag">Latest Version</span>
-                        <span class="tag">Popular</span>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h2>Tomodachi Life Mobile</h2>
+                <div class="updated">Jul 03, 2026</div>
             </div>
-            <button class="download-btn" onclick="startRedirect('tomodachi')">
-                <img src="img/download.png" class="download" alt="downlaod">
-                Download Now
-            </button>
         </div>
 
-        <div class="game-card">
+        <div class="game-card" onclick="startRedirect('dearpassenger')">
             <img class="banner" src="img/dearpassengermobile.webp" alt="Dear Passengers Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h1>Dear Passengers Mobile</h1>
-                    <p style="font-size:12px;color:#8a8f98;margin-top:6px;">Last updated: July 28, 2026</p>
-                    <p>Play Dear Passengers on your Android or iOS using stardesk install the game on your PC then
-                        stream it on your phone
-                    </p>
-                    <div class="tags">
-                        <span class="tag">iOS & Android</span>
-                        <span class="tag">Trending</span>
-                        <span class="tag">Safe & Secure</span>
-                        <span class="tag">#1</span>
-                        <span class="tag">Remote Play</span>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h2>Dear Passengers Mobile</h2>
+                <div class="updated">Jul 28, 2026</div>
             </div>
-            <button class="download-btn" onclick="startRedirect('dearpassenger')">
-                <img src="img/download.png" class="download" alt="Download">
-                Download Now
-            </button>
         </div>
 
-        <div class="game-card">
+        <div class="game-card" onclick="startRedirect('meccha')">
             <img class="banner" src="img/mecha.webp" alt="Meccha Chameleon Mobile">
-            <div class="game-info-box">
-                <div class="game-info">
-                    <h2>Meccha Chameleon Mobile</h2>
-                    <p style="font-size:12px;color:#8a8f98;margin-top:6px;">Last updated: July 13, 2026</p>
-                    <p>Play Meccha Chameleon on your phone using StarDesk install on a PC for free then stream it to
-                        Android & iOS</p>
-                    <div class="tags">
-                        <span class="tag">Android & iOS</span>
-                        <span class="tag">Latest Version</span>
-                        <span class="tag">Free</span>
-                        <span class="tag">Remote Play</span>
-                        <span class="tag">Trending</span>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h2>Meccha Chameleon Mobile</h2>
+                <div class="updated">Jul 13, 2026</div>
             </div>
-            <button class="download-btn" onclick="startRedirect('meccha')">
-                <img src="img/download.png" class="download" alt="downlaod">
-                Download Now
-            </button>
         </div>
 
     </div>
@@ -527,15 +518,11 @@
         function startRedirect(gameId) {
             const url = DOWNLOAD_LINKS[gameId];
             if (!url) return;
-
             const overlay = document.getElementById('loading-overlay');
             overlay.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 2000);
+            setTimeout(() => { window.location.href = url; }, 2000);
         }
     </script>
 
@@ -560,7 +547,6 @@
         const searchIcon = document.getElementById("searchIcon");
 
         btn.onclick = function () {
-
             box.classList.toggle("active");
             if (box.classList.contains("active")) {
                 searchIcon.src = "img/close.png";
@@ -573,28 +559,22 @@
         searchBar.addEventListener("input", function () {
             const query = searchBar.value.toLowerCase();
             if (query === "") return;
-            for (let h of document.querySelectorAll("h1, h2")) {
+            for (let h of document.querySelectorAll("h2")) {
                 if (h.textContent.toLowerCase().startsWith(query)) {
-                    h.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
+                    h.scrollIntoView({ behavior: "smooth", block: "center" });
                     break;
                 }
             }
-
         });
     </script>
 
     <script>
-
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', e => {
             if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) {
                 e.preventDefault();
             }
         });
-
     </script>
 
 </body>
