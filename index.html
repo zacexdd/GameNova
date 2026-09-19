@@ -52,9 +52,9 @@
 
         .top-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 5px 20px;
+            padding: 10px 20px;
         }
 
         .logo {
@@ -70,51 +70,6 @@
         .logo img {
             width: 25px;
             height: 25px;
-        }
-
-        #searchBtn {
-            width: 42px;
-            height: 42px;
-            border: none;
-            border-radius: 8px;
-            background: transparent;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        #searchBtn img {
-            width: 20px;
-        }
-
-        .search-container {
-            display: none;
-            padding: 12px 20px;
-        }
-
-        .search-container.active {
-            display: block;
-        }
-
-        #searchBar {
-            width: 100%;
-            height: 36px;
-            padding: 9px 100px 10px 40px;
-            margin-top: -10px;
-            border-radius: 10px;
-            border: 1px solid #444;
-            background: #212226;
-            color: white;
-            font-size: 14px;
-            outline: none;
-            background-image: url('https://i.ibb.co/27VDchNc/search.png');
-            background-repeat: no-repeat;
-            background-position: 12px center;
-            background-size: 18px 18px;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        #searchBar::placeholder {
-            color: #aaa;
         }
 
         .hero {
@@ -189,6 +144,85 @@
             width: 13px;
             height: 13px;
             opacity: 0.8;
+        }
+
+        .search-section {
+            padding: 0 15px;
+            margin-bottom: 4px;
+            margin-top: 25px;
+        }
+
+        .search-wrap {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-wrap svg.search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke-width: 2;
+            pointer-events: none;
+        }
+
+        #searchBar {
+            width: 100%;
+            height: 46px;
+            padding: 0 16px 0 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(80, 80, 80, 0.6);
+            background: #212226;
+            color: #eee;
+            font-size: 14px;
+            font-family: 'Lexend', sans-serif;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #searchBar::placeholder {
+            color: #555;
+        }
+
+        #searchBar:focus {
+            border-color: rgba(242, 118, 33, 0.55);
+            box-shadow: 0 0 0 3px rgba(242, 118, 33, 0.1);
+        }
+
+        #searchBar:focus+svg.search-icon,
+        .search-wrap:focus-within svg.search-icon {
+            stroke: #F5AD1E;
+        }
+
+        #clearSearch {
+            display: none;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        #clearSearch svg {
+            width: 11px;
+            height: 11px;
+            fill: #aaa;
+        }
+
+        #clearSearch.visible {
+            display: flex;
         }
 
         .section-label {
@@ -423,6 +457,13 @@
                 opacity: 0;
             }
         }
+
+        #no-results {
+            display: none;
+            padding: 30px 15px;
+            color: #555;
+            font-size: 13px;
+        }
     </style>
 </head>
 
@@ -434,12 +475,6 @@
                 <img src="img/favicon.png" alt="NovaXZ">
                 <span>NovaXZ</span>
             </a>
-            <button id="searchBtn">
-                <img id="searchIcon" src="https://i.ibb.co/27VDchNc/search.png" alt="Search">
-            </button>
-        </div>
-        <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search for games...">
         </div>
     </header>
 
@@ -462,12 +497,29 @@
                 </svg>
                 Remote Play
             </span>
-            <span class="hero-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </div>
+    </div>
+
+    <div class="search-section">
+        <div class="search-wrap">
+            <input type="text" id="searchBar" placeholder="Search for a game…" autocomplete="off">
+            <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="iconGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#F5AD1E" />
+                        <stop offset="100%" stop-color="#F27621" />
+                    </linearGradient>
+                </defs>
+                <circle cx="11" cy="11" r="7" stroke="url(#iconGrad)" fill="none" stroke-width="2" />
+                <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="url(#iconGrad)" stroke-width="2"
+                    stroke-linecap="round" />
+            </svg>
+            <button id="clearSearch" aria-label="Clear search">
+                <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="1" y1="1" x2="11" y2="11" stroke="#aaa" stroke-width="2" stroke-linecap="round" />
+                    <line x1="11" y1="1" x2="1" y2="11" stroke="#aaa" stroke-width="2" stroke-linecap="round" />
                 </svg>
-                Free &amp; Safe
-            </span>
+            </button>
         </div>
     </div>
 
@@ -518,8 +570,8 @@
                         </svg>
                     </div>
                 </div>
-                <div class="card-desc">A battle-slain warrior, the Valkyries have ferried your soul to Valheim the
-                    tenth Norse world.</div>
+                <div class="card-desc">A battle-slain warrior, the Valkyries have ferried your soul to Valheim the tenth
+                    Norse world.</div>
                 <div class="card-bottom-row">
                     <div class="card-rating"><span class="star">★</span> 4.9</div>
                 </div>
@@ -566,8 +618,8 @@
                         </svg>
                     </div>
                 </div>
-                <div class="card-desc">Action Adventure with Pals! dive into a brand new casual 3vs3
-                    PvP mobile game. Palworld Mobile Survival Action Adventure</div>
+                <div class="card-desc">Action Adventure with Pals! dive into a brand new casual 3vs3 PvP mobile game.
+                    Palworld Mobile Survival Action Adventure</div>
                 <div class="card-bottom-row">
                     <div class="card-rating"><span class="star">★</span> 4.5</div>
                 </div>
@@ -648,6 +700,8 @@
 
     </div>
 
+    <p id="no-results">No games found for "<span id="no-results-query"></span>"</p>
+
     <footer>© 2026 NovaXZ. All rights reserved.</footer>
 
     <div id="tiktok-fallback">
@@ -703,30 +757,44 @@
     </script>
 
     <script>
-        const btn = document.getElementById("searchBtn");
-        const box = document.querySelector(".search-container");
         const searchBar = document.getElementById("searchBar");
-        const searchIcon = document.getElementById("searchIcon");
-
-        btn.onclick = function () {
-            box.classList.toggle("active");
-            if (box.classList.contains("active")) {
-                searchIcon.src = "img/close.png";
-                searchBar.focus();
-            } else {
-                searchIcon.src = "https://i.ibb.co/27VDchNc/search.png";
-            }
-        };
+        const clearBtn = document.getElementById("clearSearch");
+        const noResults = document.getElementById("no-results");
+        const noResultsQuery = document.getElementById("no-results-query");
+        const cards = document.querySelectorAll(".game-card");
 
         searchBar.addEventListener("input", function () {
-            const query = searchBar.value.toLowerCase();
-            if (query === "") return;
-            for (let h of document.querySelectorAll("h2")) {
-                if (h.textContent.toLowerCase().startsWith(query)) {
-                    h.scrollIntoView({ behavior: "smooth", block: "center" });
-                    break;
-                }
+            const query = searchBar.value.toLowerCase().trim();
+
+            clearBtn.classList.toggle("visible", query.length > 0);
+
+            if (query === "") {
+                cards.forEach(c => c.style.display = "");
+                noResults.style.display = "none";
+                return;
             }
+
+            let anyVisible = false;
+            cards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                const desc = card.querySelector(".card-desc").textContent.toLowerCase();
+                const matches = title.includes(query) || desc.includes(query);
+                card.style.display = matches ? "" : "none";
+                if (matches) anyVisible = true;
+            });
+
+            if (!anyVisible) {
+                noResultsQuery.textContent = searchBar.value;
+                noResults.style.display = "block";
+            } else {
+                noResults.style.display = "none";
+            }
+        });
+
+        clearBtn.addEventListener("click", function () {
+            searchBar.value = "";
+            searchBar.dispatchEvent(new Event("input"));
+            searchBar.focus();
         });
     </script>
 
