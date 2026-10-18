@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+
+    <title>NovaXZ - Nommiclone</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        body {
+            background: #191A1E;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px 10px;
+        }
+
+        .hero h1 {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            max-width: 520px;
+            padding: 20px 20px 0;
+            color: #888;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(120, 120, 120, 0.5);
+        }
+
+        .game-image {
+            width: calc(100% - 30px);
+            max-width: 520px;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 24px 15px 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: calc(100% - 30px);
+            max-width: 520px;
+            margin: 0 15px;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #444;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(130, 130, 130, 0.2);
+        }
+
+        .store-btn img {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+        }
+
+        .store-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .store-text small {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+
+        .store-text strong {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .android-btn {
+            background: linear-gradient(135deg, #00ff4c, #01972e);
+        }
+
+        .ios-btn {
+            background: linear-gradient(135deg, #18BFFB, #2072F3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <h1>WELCOME TO SPEED STARS MOD DOWNLOAD PAGE</h1>
+    </div>
+
+    <div class="section-title">Download</div>
+
+    <img class="game-image" src="https://play-lh.googleusercontent.com/loH0wtJ8h7-SOIVtoab26F9iIOAirdwKHVpV8g1s031bdQWluflCl9K97ukdyDGcqPfTj6Ik6gHw5F7ttUijWg=w526-h296-rw" alt="Speed Stars">
+
+    <div class="buttons">
+        <a href="https://en.softonic.com/download/speed-stars/android/post-download/v/2.54?dt=internalDownload" target="_blank" class="store-btn android-btn">
+            <img src="https://cdn.simpleicons.org/googleplay/white" alt="Google Play">
+            <span class="store-text">
+                <small>Download for</small>
+                <strong>Android</strong>
+            </span>
+        </a>
+
+        <a href="https://dl.iosvizor.net/speed-stars/speed-stars-v2.50-iosvizor.ipa" target="_blank" class="store-btn ios-btn">
+            <img src="https://cdn.simpleicons.org/appstore/white" alt="App Store">
+            <span class="store-text">
+                <small>Download for</small>
+                <strong>iOS</strong>
+            </span>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 Novaxz. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
